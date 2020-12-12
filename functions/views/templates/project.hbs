@@ -99,12 +99,14 @@
                         </button>
                     </div>
                     <div id="collapseG2A" class="collapse show" aria-labelledby="headingG2A" data-parent="#projectsAccordion">
-                {{/if}}
                         <div class="card-body">
-                                {{url_creator (lookup ../projectInfo.values @index) key}}
-                        </div>
+                            <div class="w-100" style="height: 20px; background-color:none"></div>
+                {{/if}}    
+                            {{url_creator (lookup ../projectInfo.values @index) key}}
             {{/each}}
-                     </div>
+                        <div class="w-100" style="height: 20px; background-color:inherit"></div>
+                        </div>
+                    </div>
             </div>   
             <div class="w-100" style="height: 5px;"></div>
             {{#each projectDescriptions as |description|}}
@@ -117,9 +119,11 @@
                     </div>
                     <div id="collapseG1{{@index}}" class="collapse " aria-labelledby="headingG1{{@index}}" data-parent="#projectsAccordion">
                         <div class="card-body">
+                        <div class="w-100" style="height: 20px; background-color:inherit"></div>
                 {{/if}}
                             {{p_description description}}
             {{/each}}
+                        <div class="w-100" style="height: 20px; background-color:inherit"></div>
                         </div>
                     </div>
                 </div>
