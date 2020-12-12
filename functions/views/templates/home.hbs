@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--icon-->
+    <link rel="icon" type="image/ico" href="/icons/pageIcon.ico">
+    <!--pageTitle-->
+    <title>{{pageTitle}}</title>
+    <!--preload images-->
+    {{#each mobile}}
+        <link rel="preload" as="image" href="{{iconAddress}}">
+    {{/each}}
+    {{#each web}}
+        <link rel="preload" as="image" href="{{iconAddress}}">
+    {{/each}}
+    {{#each desktop}}
+        <link rel="preload" as="image" href="{{iconAddress}}">
+    {{/each}}
+    {{#each graphicDesign}}
+        <link rel="preload" as="image" href="{{iconAddress}}">
+    {{/each}}
+    <!--boostrap framework-->
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/header&footer/header.css">
+    <link rel="stylesheet" href="/css/homePage/home.css">
+    <link rel="stylesheet" href="/css/header&footer/footer.css">
+</head>
+<body class="parent">
+<!-- ============================================================================================================================== -->
+<!--Beginning of navbar-->
+    <header>{{> navbar}}</header>
+<!--End of navbar-->
+<!-- ============================================================================================================================== -->
+<!--Beginning of main content-->
+    <main role="main" class="container" >
+    <!--Beginning of btn group-->
+    <div class="container container-group-wrapper">
+        <!--Beginning of 1st btn-->
+            <div id="first-btn-wrapper" class="container">
+                <div id="firstbtn-accordion">
+                    <div class="card card-code-group-wrapper">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn card-header-title" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Mobile apps
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#firstbtn-accordion">
+                            <div class="card-body">
+                                <div class="row">
+                                    {{#each mobile}}
+                                    <div class="col-lg-3 col-sm-6 col-12 project-col-wrapper">
+                                        <a href="/home/project?base=mobileApp&name={{name}}" >
+                                            <input type="image" class="project-btn" src="{{iconAddress}}">
+                                            <p class="project-name">{{nameFull}}</p>
+                                            </input>
+                                        </a>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--End of 1st btn-->
+<!-- ============================================================================================================================== -->
+        <!--Beginning of 2nd btn-->
+            <div id="second-btn-wrapper"  class="container">
+                <div id="secondtbtn-accordion">
+                    <div class="card card-code-group-wrapper">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn card-header-title" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                Web apps
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#secondtbtn-accordion">
+                            <div class="card-body">
+                                <div class="row">
+                                    {{#each web}}
+                                    <div class="col-lg-3 col-sm-6 col-12 project-col-wrapper">
+                                        <a href="/home/project?base=webApp&name={{name}}" style="text-decoration: ;">
+                                            <input type="image" class="project-btn" src="{{iconAddress}}">
+                                            <p class="project-name">{{nameFull}}</p>
+                                            </input>
+                                        </a>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--End of 2nd btn-->
+<!-- ============================================================================================================================== -->
+        <!--Beginning of 3rd btn-->
+            <div id="third-btn-wrapper"  class="container">
+                <div id="thirdbtn-accordion">
+                    <div class="card card-code-group-wrapper">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn card-header-title" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                Desktop apps
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#thirdbtn-accordion">
+                            <div class="card-body">
+                                <div class="row">
+                                    {{#each desktop}}
+                                    <div class="col-lg-3 col-sm-6 col-12 project-col-wrapper">
+                                        <a href="/home/project?base=desktop&name={{name}}" style="text-decoration: ;">
+                                            <input type="image" class="project-btn" src="{{iconAddress}}">
+                                            <p class="project-name">{{nameFull}}</p>
+                                            </input>
+                                        </a>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--End of 3rd btn-->
+<!-- ============================================================================================================================== -->
+        <!--Beginning of 4th btn-->
+            <div id="fourth-btn-wrapper"  class="container">
+                <div id="fourthbtn-accordion">
+                    <div class="card card-code-group-wrapper">
+                        <div class="card-header" id="headingFour">
+                            <h5 class="mb-0">
+                                <button class="btn card-header-title" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                Graphic designs 
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#fourthbtn-accordion">
+                            <div class="card-body">
+                                <div class="row">
+                                   {{#each graphicDesign}}
+                                    <div class="col-lg-3 col-sm-6 col-12 project-col-wrapper">
+                                        <a href="/home/project?base=graphicDesign&name={{name}}" style="text-decoration: ;">
+                                            <input type="image" class="project-btn" src="{{iconAddress}}">
+                                            <p class="project-name">{{nameFull}}</p>
+                                            </input>
+                                        </a>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--End of 4th btn-->
+        </div>
+    </main>
+<!--End of main content-->
+<!-- ============================================================================================================================== -->
+<!--Beginning of footer -->
+    <footer class="footer">{{> footer}}</footer>
+<!--End of footer -->
+<!-- ============================================================================================================================== -->  
+</body>
+<!--boostrap js-->
+    <script src="/js/jquery/jquery.js"></script>
+    <script src="/js/bootstrap/bootstrap.min.js"></script>
+</html>

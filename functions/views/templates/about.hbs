@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--icon-->
+    <link rel="icon" type="image/ico" href="/icons/pageIcon.ico">
+    <!--pageTitle-->
+    <title>{{pageTitle}}</title>
+
+    {{#each fields as |field|}}
+        {{#if field._canPublish}}
+            {{#isPersonalInfo field.shortName}}
+                <link rel="preload" as="image" href="{{field.pictureAddress}}">
+            {{/isPersonalInfo}}
+        {{/if}}
+    {{/each}}
+    <!--boostrap framework-->
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/header&footer/header.css">
+    <link rel="stylesheet" href="/css/aboutPage/main.css">
+    <link rel="stylesheet" href="/css/header&footer/footer.css">
+</head>
+<body>
+<!-- ============================================================================================================================== -->
+<!--Beginning of navbar-->
+   <header>{{> navbar}}</header>
+<!--End of navbar-->
+<!-- ============================================================================================================================== -->
+<!--Beginning of mai content-->
+<main role="main" class="container">
+    <div class="container info-wraper">
+        <div class="row">
+            <div class="col-12 col-lg-5">
+            <!--Beginning of photo and contact information-->
+            {{#each fields as |field|}}
+                {{#if field._canPublish}}
+                    {{#isPersonalInfo field.shortName}}
+                        <div id="personal-info-wrapper" class="container">
+                            <div id="photoAndName" class="">
+                                <img src="{{field.pictureAddress}}" class="mx-auto d-block" alt="">
+                                <h1 class="h2 text-center">{{field.1_name}}</h1>
+                            </div>
+                            <div class="container">
+                                <p class="h4 text-center"><strong>Contact information:</strong></p>
+                                <div class="container text-center">
+                                    {{url_creator field.2_contactInfo.1_phone '1_phone'}}
+                                </div>
+                                <div class="container text-center">
+                                    {{url_creator field.2_contactInfo.2_email '2_email'}}
+                                </div>
+                                <div class="container text-center">
+                                    {{url_creator field.2_contactInfo.3_linkedIn '3_linkedIn'}}
+                                </div>
+                                
+                            </div>
+                            <div class="container">
+                                <p class="h4 text-center"><strong>Current location:</strong></p>
+                                <div class="containe text-centerr">
+                                    <p class="text-center">{{field.3_currentLocation}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {{/isPersonalInfo}}
+                {{/if}}
+            {{/each}}
+            <!-- End of photo and contact information-->
+<!-- ============================================================================================================================== -->
+            <!--Beginning Resume -->
+            </div>
+            <div class="col-12 col-lg-7 resume-information">
+                <div class="row resume-information-row">
+                    <div class="col-12">
+                        <div class="accordion" id="accordionExample">
+                            <!--Beginning professional experience -->
+                            {{#each fields as |field|}}
+                                {{#if field._canPublish}}
+                                    {{#isProfessionaExperience field.shortName}}
+                                        <div class="card">
+                                            <div class="card-header" id="heading{{@index}}">
+                                                <h2 class="mb-0">
+                                                    <button class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
+                                                    {{field.fieldName}}
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapse{{@index}}" class="collapse" aria-labelledby="heading{{@index}}" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    <ul class="list-group" style="padding-left: 15px;">
+                                                    {{#each field.values as |job|}}
+                                                        <li class="h4"><Strong>{{job.1_jobTitle}}</Strong><i></i></li>
+                                                        <div class="container" >
+                                                            <div class="row" style="margin-bottom: 25px;">
+                                                                <div class="col-sm-6 col-12 text-left" style="margin-bottom: 15px;"> <strong>{{job.2_company}}</strong></div>
+                                                                <div class="col-sm-6 col-12 text-right" style="margin-bottom: 15px;"> <i>{{job.4_startDate}} - {{job.5_endDate}}</i></div>
+                                                                <p>{{job.6_summary}}</p>
+                                                                <div>
+                                                                    <ul style="list-style: square;">
+                                                                    {{#each job.7_actionSentences}}
+                                                                        <li>{{@this}}</li>
+                                                                    {{/each}}
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {{/each}}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/isProfessionaExperience}}
+                            <!--End professional experience -->
+<!-- ============================================================================================================================== -->
+                            <!--Beginning education -->
+                                    {{#isEducation field.shortName}}
+                                        <div class="card">
+                                            <div class="card-header" id="heading{{@index}}">
+                                                <h2 class="mb-0">
+                                                    <button class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
+                                                    {{field.fieldName}}
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapse{{@index}}" class="collapse" aria-labelledby="heading{{@index}}" data-parent="#accordionExample">
+                                                <div class="card-body">                                                                              
+                                                    <ul class="list-group" style="padding-left: 15px;">
+                                                    {{#each field.values as |degree|}}
+                                                        <li class="h4"><Strong>{{degree.1_degreeType}}</Strong><i></i></li>
+                                                        <p><strong>{{degree.2_degreeFullName}}</strong></p>
+                                                        <div class="container" >
+                                                            <div class="row" style="margin-bottom: 25px;">
+                                                                <div class="col-lg-4 col-12">
+                                                                    {{degree.3_degreeYears}}
+                                                                </div>
+                                                                <div class="col-lg-8 col-12">
+                                                                    {{degree.4_degreeUniversity}}
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    {{degree.5_degreeLocality}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {{/each}}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/isEducation}}
+                            <!--End education -->
+<!-- ============================================================================================================================== -->
+                            <!--Beginning Languages -->
+                                    {{#isLanguage field.shortName}}
+                                        <div class="card">
+                                            <div class="card-header" id="heading{{@index}}">
+                                                <h2 class="mb-0">
+                                                    <button class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
+                                                    {{field.fieldName}}
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapse{{@index}}" class="collapse" aria-labelledby="heading{{@index}}" data-parent="#accordionExample">
+                                                <div class="card-body">                                                                              
+                                                    <ul class="list-group" style="padding-left: 15px;">
+                                                    {{#each field.values as |lang|}}
+                                                        {{#if lang.2_languageNative}}
+                                                            <li class="h4">{{lang.1_language}} <i>({{lang.2_1_languageNativeDescription}})</i></li>
+                                                            <div class=".container-fluid">
+                                                                <div class="row" style="margin-left: 20px; margin-top: 20px;">
+                                                                    <div class="col-12">
+                                                                            <p>Native language</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        {{else}}
+                                                            <li class="h4">{{lang.1_language}} </li>
+                                                            <div class=".container-fluid">
+                                                                <div class="row" style="margin-left: 20px; margin-top: 20px;">
+                                                                    <div class="col-xl-3 col-lg-6 col-12">
+                                                                        <p><strong>Listening: </strong> {{lang.3_languageAbilities.Listening}}</p>
+                                                                    </div>
+                                                                    <div class="col-xl-3 col-lg-6 col-12">
+                                                                        <p><strong>Reading: </strong> {{lang.3_languageAbilities.Reading}}</p>
+                                                                    </div>
+                                                                    <div class="col-xl-3 col-lg-6 col-12">
+                                                                        <p><strong>Speaking: </strong> {{lang.3_languageAbilities.Speaking}}</p>
+                                                                    </div>
+                                                                    <div class="col-xl-3 col-lg-6 col-12">
+                                                                        <p><strong>Writing: </strong> {{lang.3_languageAbilities.Writing}}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        {{/if}}
+                                                    {{/each}}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/isLanguage}}
+                            <!--End languages -->
+<!-- ============================================================================================================================== -->
+                            <!--Beginning courses -->
+                                    {{#isCourse field.shortName}}
+                                        <div class="card">
+                                            <div class="card-header" id="heading{{@index}}">
+                                                <h2 class="mb-0">
+                                                    <button class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
+                                                    {{field.fieldName}}
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapse{{@index}}" class="collapse" aria-labelledby="heading{{@index}}" data-parent="#accordionExample">
+                                                <div class="card-body">                                                                              
+                                                    <ul class="list-group" style="padding-left: 15px;">
+                                                        {{#each field.values as |course|}}
+                                                        <li class="h4">{{course.1_courseName}} </li>
+                                                        <div class=".container-fluid">
+                                                            <div class="row" style="margin-left: 20px; margin-top: 20px;">
+                                                                <div class="col-xl-3 col-lg-6 col-12">
+                                                                    <p><strong>Platform:</strong> {{course.2_coursePlatform}}</p>
+                                                                    <p><strong>Course duration:</strong> {{course.3_courseHours}}</p>
+                                                                    <p><strong>Completion date:</strong> {{course.4_courseCompletionDate}}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {{/each}}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/isCourse}}
+                            <!--End courses -->
+<!-- ============================================================================================================================== -->
+                            <!--Beginning skills -->
+                                    {{#isSkill field.shortName}}
+                                        <div class="card">
+                                            <div class="card-header" id="heading{{@index}}">
+                                                <h2 class="mb-0">
+                                                    <button class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
+                                                    {{field.fieldName}}
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapse{{@index}}" class="collapse" aria-labelledby="heading{{@index}}" data-parent="#accordionExample">
+                                                <div class="card-body">                                                                              
+                                                    <ul class="list-group" style="padding-left: 15px;">
+                                                        {{#each field.values as |skill|}}
+                                                        <li class="h4">{{skill.1_skillType}}</li>
+                                                        <div class=".container-fluid">
+                                                            <div class="row" style="margin-left: 20px; margin-top: 20px;">
+                                                                {{#each skill.2_skillList}}
+                                                                <div class="col-lg-6 col-12">
+                                                                    <p>- {{this}}</p>
+                                                                </div>
+                                                                {{/each}}
+                                                            </div>
+                                                        </div>
+                                                        {{/each}}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/isSkill}}
+                            <!--End skill -->
+                                {{/if}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--End of main content-->
+<!-- ============================================================================================================================== -->
+<!--Beginning of footer-->
+    <footer class="footer">{{> footer}}</footer>
+<!--End of footer-->
+<!-- ============================================================================================================================== -->    
+</body>
+<!--boostrap js-->
+    <script src="/js/jquery/jquery.js"></script>
+    <script src="/js/bootstrap/bootstrap.min.js"></script>
+</html>

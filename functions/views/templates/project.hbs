@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--icon-->
+    <link rel="icon" type="image/ico" href="/icons/pageIcon.ico">
+    <!--pageTitle-->
+    <title>{{nameFull}}</title>
+    <!--preload images-->
+    {{#each projectInfoGraphicInfo.photos  as |photo|}}
+        <link rel="preload" as="image" href="{{photo}}">
+    {{/each}}
+    <!--boostrap framework-->
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/header&footer/header.css">
+    <link rel="stylesheet" href="/css/projectPage/project.css">
+    <link rel="stylesheet" href="/css/header&footer/footer.css">
+</head>
+<body class="parent">
+<!-- ============================================================================================================================== -->
+<!--Beginning of navbar-->
+    <header>{{> navbar}}</header>
+<!--End of navbar -->
+<!-- ============================================================================================================================== -->
+<!--Beginning of main content-->
+    <main role="main" class="container" >
+    <!--Beginning of breadcrumbs-->
+        <div class=".container-fluid breadcrumb-wraper">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{nameFull}}</li>
+                </ol>
+            </nav>
+        </div>
+    <!--End of breadcrumbs -->
+<!-- ============================================================================================================================== -->
+        {{#if _canPublish}}
+        <div class="container" id="app-title-wrapper">
+            <h1 id="project-name-for-card" class="h1 text-center">{{nameFull}}</h1>
+        </div>
+        <div class="w-100" style="height: 10px;"></div>
+    <!--Beginning of carousel-->
+        <div class=".container-fluid app-information">
+            <div class=".container-fluid picture-wraper">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                    {{#each projectInfoGraphicInfo.photos as |photo|}}
+                        {{#if @first}}
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{@index}}" class="active"></li>
+                        {{else}}
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{@index}}"></li>
+                        {{/if}}
+                    {{/each}}
+                    </ol>
+                    <div class="carousel-inner">
+                        {{#each projectInfoGraphicInfo.photos  as |photo|}}
+                        {{#if @first}}
+                            <div class="carousel-item active">
+                        {{else}}
+                            <div class="carousel-item">          
+                        {{/if}}
+                                <a href="{{photo}}">
+                                    <div class="container">
+                                        <img class="d-block w-100" src="{{photo}}" alt="{{@index}}slide">
+                                    </div>
+                                </a>
+                                    <div class=".container-fluid" style="">
+                                        <div class="carousel-caption ">
+                                            {{{p_creator (lookup ../projectInfoGraphicInfo.captions @index)}}}
+                                        </div>
+                                    </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <!--End of carousel-->
+<!-- ============================================================================================================================== -->
+    <!--Beginning of accordion-->
+        <div class="container container-group-wrapper" style="padding-bottom: 15px;">
+        <div class="accordion" id="projectsAccordion">
+            <div class="card" id="headingG2A">
+            {{#each projectInfo.keys as |key|}}
+                {{#if @first}}
+                    <div class="card-header">
+                        <button class="btn btnCtrl w-100" type="button" data-toggle="collapse" data-target="#collapseG2A" aria-expanded="false" aria-controls="collapseG2A">
+                            <h1 class="h4 text-center">Project Summary</h1>
+                        </button>
+                    </div>
+                    <div id="collapseG2A" class="collapse show" aria-labelledby="headingG2A" data-parent="#projectsAccordion">
+                {{/if}}
+                        <div class="card-body">
+                                {{url_creator (lookup ../projectInfo.values @index) key}}
+                        </div>
+            {{/each}}
+                     </div>
+            </div>   
+            <div class="w-100" style="height: 5px;"></div>
+            {{#each projectDescriptions as |description|}}
+                {{#if @first}}
+                <div class="card" id="headingG1{{@index}}">
+                    <div class="card-header">
+                        <button class="btn btnCtrl w-100 collapsed" type="button" data-toggle="collapse" data-target="#collapseG1{{@index}}" aria-expanded="false" aria-controls="collapseG1{{@index}}">
+                            <h1 class="h4 text-center">Project Description</h1>
+                        </button>
+                    </div>
+                    <div id="collapseG1{{@index}}" class="collapse " aria-labelledby="headingG1{{@index}}" data-parent="#projectsAccordion">
+                        <div class="card-body">
+                {{/if}}
+                            {{p_description description}}
+            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="container container-group-wrapper" style="padding-bottom: 15px;">
+                <h1 style="color: white;">{{nameFull}}</h1>
+                <p style="color: white">Page under construction</p>
+        </div>
+        {{/if}}
+    <!--End of accordion-->
+    </main>
+<!--End of main content-->
+<!-- ============================================================================================================================== -->
+<!--Beginning of footer-->
+    <footer class="footer">{{> footer}}</footer>
+<!--End of footer-->
+<!-- ============================================================================================================================== -->  
+</body>
+ <!--boostrap js-->
+    <script src="/js/jquery/jquery.js"></script>
+    <script src="/js/bootstrap/bootstrap.min.js"></script>
+</html>
