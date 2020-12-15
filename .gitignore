@@ -70,6 +70,7 @@ hosting.cHVibGlj.cache
 functions/_functions/teste.js
 functions/firestore/keyAndConfiguration/
 functions/node_modules/
+functions/views/mappingData.hbs
 
 node_modules/
 

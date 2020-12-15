@@ -42,49 +42,64 @@
         </div>
         <div class="w-100" style="height: 10px;"></div>
     <!--Beginning of carousel-->
-        <div class=".container-fluid app-information">
-            <div class=".container-fluid picture-wraper">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                    {{#each projectInfoGraphicInfo.photos as |photo|}}
+        <div class="container app-information">
+            <div class="container container-group-wrapper">
+                <div class="accordion" id="projectsAccordionPhoto">
+                    <div class="card" id="headingG3A">
+                        <div class="card-header">
+                            <button class="btn btnCtrl w-100" type="button" data-toggle="collapse" data-target="#collapseG3A" aria-expanded="false" aria-controls="collapseG3A">
+                                    <h1 class="h4 text-center">Project Screenshots</h1>
+                            </button>
+                        </div>
+                    {{#each projectInfoGraphicInfo.photos  as |photo|}}
                         {{#if @first}}
-                        <li data-target="#carouselExampleIndicators" data-slide-to="{{@index}}" class="active"></li>
+                            <div id="collapseG3A" class="collapse show" aria-labelledby="headingG3A" data-parent="#projectsAccordionPhoto">
+                                <div class="card-body">
+                                    <div class="w-100" style="height: 20px; background-color:none"></div>
+                                    <!--<div class="container picture-wraper">-->
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="false">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
                         {{else}}
-                        <li data-target="#carouselExampleIndicators" data-slide-to="{{@index}}"></li>
+                                                <div class="carousel-item">          
                         {{/if}}
+                                                    <a href="{{photo}}">
+                                                        <div class="container">
+                                                            <img class="d-block w-100" src="{{photo}}" alt="{{@index}}slide">
+                                                        </div>
+                                                    </a>
+                                                    <div class=".container-fluid" style="">
+                                                        <div class="carousel-caption ">
+                                                            {{{p_creator (lookup ../projectInfoGraphicInfo.captions @index)}}}
+                                                        </div>
+                                                    </div>
+                                                </div>
                     {{/each}}
-                    </ol>
-                    <div class="carousel-inner">
-                        {{#each projectInfoGraphicInfo.photos  as |photo|}}
-                        {{#if @first}}
-                            <div class="carousel-item active">
-                        {{else}}
-                            <div class="carousel-item">          
-                        {{/if}}
-                                <a href="{{photo}}">
-                                    <div class="container">
-                                        <img class="d-block w-100" src="{{photo}}" alt="{{@index}}slide">
-                                    </div>
-                                </a>
-                                    <div class=".container-fluid" style="">
-                                        <div class="carousel-caption ">
-                                            {{{p_creator (lookup ../projectInfoGraphicInfo.captions @index)}}}
+                                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>
+                                            <ol class="carousel-indicators">
+                                            {{#each projectInfoGraphicInfo.photos as |photo|}}
+                                                {{#if @first}}
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="{{@index}}" class="active"></li>
+                                                {{else}}
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="{{@index}}"></li>
+                                                {{/if}}
+                                            {{/each}}
+                                            </ol>
                                         </div>
-                                    </div>
+                                </div>
                             </div>
-                        {{/each}}
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                        </div>
                 </div>
             </div>
-        </div>
+            <div class="w-100" style="height: 5px;"></div>               
     <!--End of carousel-->
 <!-- ============================================================================================================================== -->
     <!--Beginning of accordion-->
@@ -144,7 +159,9 @@
 <!--End of footer-->
 <!-- ============================================================================================================================== -->  
 </body>
- <!--boostrap js-->
+<!--boostrap js-->
     <script src="/js/jquery/jquery.js"></script>
     <script src="/js/bootstrap/bootstrap.min.js"></script>
+<!--customed js-->
+    
 </html>
