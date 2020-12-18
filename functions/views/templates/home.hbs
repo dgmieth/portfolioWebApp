@@ -209,7 +209,38 @@
         if (!readCookie("adSeen")) {
             var progressBar = $('.progress-bar');
             var percentVal = 0;
-            fetch('/registerLog')
+            if(!navigator.geolocation){
+                console.log('geolocation inactive')
+                registerLog(0,0,false)
+            }else{
+                navigator.geolocation.getCurrentPosition(
+                    function success(position) {
+                        var latitude  = position.coords.latitude
+                        var longitude = position.coords.longitude
+                        registerLog(position.coords.latitude, position.coords.longitude, true)
+                    },
+                    function error(){
+                        console.log('error')
+                        registerLog(undefined,undefined,false)
+                    },
+                    {
+                        timeout: 5000
+                    })
+            }
+            function registerLog(lat, lon, answer){
+                var objData = {
+                    lat: lat,
+                    lon: lon,
+                    answer: true
+                }
+                fetch('/registerLog',{
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(objData)
+                }).then()
+            }
             function startInterval(){
                 return window.setInterval(function(){
                     percentVal += 1;

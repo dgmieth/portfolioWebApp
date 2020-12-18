@@ -1,20 +1,51 @@
 const admin = require('firebase-admin');
+
+var geolocationApi = require('../../_api/geolocationApi')
 //==================================================================================
 //      FUNCTION INSERTS TIME STAMP AND A NEW DOCUMENT IN THE FIREBASE DATABASE
 //==================================================================================
 //----------------------------------------------------------------------------------
 //       checks if user is already logged in, if not register login in database
 //----------------------------------------------------------------------------------
-module.exports = async(chosenConfiguration)=>{
-    await insertVisitationLog(chosenConfiguration)
+module.exports = async(chosenConfiguration, objData)=>{
+    var objLocation = {
+            hasLocation: false,
+            stringCity: ''
+    }
+    if(objData.answer){
+        geolocationApi(objData.lat, objData.lon,(answer)=>{
+            if(answer==='-1'){
+                objLocation.hasLocation = false
+                objLocation.stringCity = 'No location found'
+                writeLog()
+            }else{
+                objLocation.hasLocation = true
+                objLocation.stringCity = answer
+                writeLog()
+            }
+        })
+    }else{
+        objLocation.hasLocation = false
+        objLocation.stringCity = 'No location found'
+        writeLog()
+    }
+    async function writeLog(){
+        await insertVisitationLog(chosenConfiguration, objLocation)
+    }
     return null
     
 }
 //----------------------------------------------------------------------------------
 //                      insert into database statement
 //----------------------------------------------------------------------------------
-async function insertVisitationLog(chosenConfiguration){
+async function insertVisitationLog(chosenConfiguration, objLocation){
     var newTime = new Date()
+    var locationString = ''
+    if(!objLocation.hasLocation){
+        locationString = objLocation.stringCity
+    }else{
+        locationString = objLocation.stringCity
+    }
     if (chosenConfiguration==='production'){
         var docTitle = 'prod_'
         newTime.setHours(newTime.getHours()-3)
@@ -47,7 +78,8 @@ async function insertVisitationLog(chosenConfiguration){
         }    
         const writeResult = await admin.firestore().collection('logIn_log').doc(`${docTitle}`).set({
             logged: true,
-            time: new Date()
+            time: new Date(),
+            location: locationString
         })
         .catch((error)=>{console.error("Error writing document: ", error)})
     }

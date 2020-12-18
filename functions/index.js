@@ -6,7 +6,7 @@ const hbs = require('./_functions/hbsConfiguration')
 //database firestore configuration
 var firestoreConfiguration = require('./firestore/keyAndConfiguration/firestoreConfiguration')
 var configurationType = require('./firestore/keyAndConfiguration/configurationType')
-var chosenConfiguration = configurationType.dev
+var chosenConfiguration = configurationType.prod
 //database statements
 var getAboutMeInformation = require('./firestore/CRUD/getAboutMeInformation')
 var getSpecificProject = require('./firestore/CRUD/getSpecificProject')
@@ -47,8 +47,10 @@ app.get('/home/project', async (req,res)=>{
 //                                service routes
 //----------------------------------------------------------------------------------
 //registers log in firebase
-app.get('/registerLog', async(req, res)=>{
-    await insertVisitationLog(chosenConfiguration)
+app.post('/registerLog', async(req, res)=>{
+    console.log(req.body)
+    console.log(req.body.answer)
+    res.send(await insertVisitationLog(chosenConfiguration,req.body))
 })
 //==================================================================================
 //                            APP/SERVER INITIALIZATION
