@@ -25,6 +25,8 @@ app.use(express.urlencoded())
 app.use(express.json())
 //configure middleware in app
 
+//api
+var ipStack = require('./ipGeolocationAPI/ipStack')
 //==================================================================================
 //                                   ROUTING
 //==================================================================================
@@ -47,8 +49,14 @@ app.get('/home/project', async (req,res)=>{
 //                                service routes
 //----------------------------------------------------------------------------------
 //registers log in firebase
-app.get('/registerLog', async(req, res)=>{
-    await insertVisitationLog(chosenConfiguration)
+app.post('/registerLog', async(req, res)=>{
+    var location = await ipStack(req.body.ip)
+    var results = await insertVisitationLog(chosenConfiguration, req.body.ip, location.locationString)
+    if(results.error==='undefined'){
+        res.status(500).json({error: results.error})
+    }else{
+        res.status(200).json({success: results.success})
+    }
 })
 //==================================================================================
 //                            APP/SERVER INITIALIZATION

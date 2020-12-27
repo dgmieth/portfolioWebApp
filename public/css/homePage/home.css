@@ -10,7 +10,7 @@ MEDIA QUERIES
  BODY                                           
 ============================================================================================*/
 body{
-    background-color: rgba(26, 26, 29, 1);
+    background-color: rgba(10, 54, 21, 1);
 }
 /*===========================================================================================
 .loading-page                                           
@@ -38,14 +38,14 @@ body{
             margin: auto;
             width: 75%;
             background-color:transparent;
-            border:rgba(0, 174, 239, 1) 2px solid;
+            border:black 2px solid;
             height: 45%;
         }
 /*===========================================================================================
             .progress-bar loading-page                                           
 ============================================================================================*/
     .loading-page .progress-bar{
-        background-color: rgba(0, 174, 239, 1);
+        background-color: black;
         border: rgba(26, 26, 29, 1) 1px solid;
         color: rgba(26, 26, 29, 1);
         font-weight: 600;
@@ -62,15 +62,13 @@ body{
 /*===========================================================================================
 main                                       
 ============================================================================================*/
-main{
-    padding-bottom: .2rem ;
-}
+
 /*===========================================================================================
     .card-code-group-wrapper -> this class holds the cards containing all projects by modality                                         
 ============================================================================================*/
     .card-code-group-wrapper{
         position: relative;
-        background-color:  rgba(78, 78, 80, 1) ;
+        background-color:  rgba(217, 211, 62, 1) ;
         text-align: center;
         padding-top: 50px;
         padding-bottom: 50px;
@@ -81,33 +79,36 @@ main{
         .card
 ============================================================================================*/
         .card{
-            border: 0.5px solid rgba(78, 78, 80, 1);
+            border: 1px solid rgba(0, 0, 0, 1);
         }
 /*===========================================================================================
             .card-header                                     
 ============================================================================================*/
             .card-header{
-                background-color:  rgba(78, 78, 80, 1) ;
+                background-color:  rgba(217, 211, 62, 1) ;
                 border: none;
             }
 /*===========================================================================================
                 .card-header-title
 ============================================================================================*/
                 .card-header-title {
-                    font-size: 1.5em;
-                    color: rgba(0, 174, 239, 1);
+                    font-family: 'Permanent Marker','Bradley Hand', cursive;font-weight:400;
+                    font-size: 2em;
+                    color: rgba(27, 120, 35, 1);
                     font-weight: 500;
+                    text-shadow:  -0.8px -0.8px 0 #000, 0.8px -0.8px 0 #000, -0.8px 0.8px 0 #000, 0.8px .8px 0 #000;
                 }
-                .card-header-title:hover {
-                    color: rgba(0, 174, 239, 1);
+                .card-header-title:hover, .selected {
+                    color: black;
                     font-weight: 700;
                     text-decoration: none;
+                    text-shadow: none;
                 }
 /*===========================================================================================
             .card-body
 ============================================================================================*/
             .card-body{
-                background-color:  rgba(227, 221, 210, 1);;
+                background-color:  rgba(217, 211, 62, 1);
                 color: white;
             }
 /*===========================================================================================
@@ -135,6 +136,9 @@ main{
                             filter: none;
                             text-decoration: none;
                         }
+                        .btn{
+                            transition: none;
+                        }
 /*===========================================================================================
                         .project-name < a
 ============================================================================================*/
@@ -143,10 +147,10 @@ main{
                             text-decoration: none;
                         }
                         .project-name{
-                            -webkit-text-stroke: 0.1px white;
-                            filter: drop-shadow(1.2px 1.2px 5px rgb(121, 121, 121));
+                           text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
                             font-size: 1.5em;
                             color:  rgba(26, 26, 29, 1);
+                            font-family: 'Acme', 'Times New Roman', Times, serif;
                             position: relative;
                             margin-top: -45px;
                         }

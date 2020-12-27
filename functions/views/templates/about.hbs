@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="/css/header&footer/header.css">
     <link rel="stylesheet" href="/css/aboutPage/main.css">
     <link rel="stylesheet" href="/css/header&footer/footer.css">
+    <!--google fronts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- ============================================================================================================================== -->
@@ -42,7 +46,7 @@
                                 <h1 class="h2 text-center">{{field.1_name}}</h1>
                             </div>
                             <div class="container">
-                                <p class="h4 text-center"><strong>Contact information:</strong></p>
+                                <p class="h4 text-center contact-info-wrapper"><strong>Contact information:</strong></p>
                                 <div class="container text-center">
                                     {{url_creator field.2_contactInfo.1_phone '1_phone'}}
                                 </div>
@@ -55,7 +59,7 @@
                                 
                             </div>
                             <div class="container">
-                                <p class="h4 text-center"><strong>Current location:</strong></p>
+                                <p class="h4 text-center contact-info-wrapper"><strong>Current location:</strong></p>
                                 <div class="containe text-centerr">
                                     <p class="text-center">{{field.3_currentLocation}}</p>
                                 </div>
@@ -77,9 +81,9 @@
                                 {{#if field._canPublish}}
                                     {{#isProfessionaExperience field.shortName}}
                                         <div class="card">
-                                            <div class="card-header" id="heading{{@index}}">
+                                            <div class="card-header text-center" id="heading{{@index}}">
                                                 <h2 class="mb-0">
-                                                    <button class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
+                                                    <button id="header01" class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
                                                     {{field.fieldName}}
                                                     </button>
                                                 </h2>
@@ -114,9 +118,9 @@
                             <!--Beginning education -->
                                     {{#isEducation field.shortName}}
                                         <div class="card">
-                                            <div class="card-header" id="heading{{@index}}">
+                                            <div class="card-header text-center" id="heading{{@index}}">
                                                 <h2 class="mb-0">
-                                                    <button class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
+                                                    <button id="header02" class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
                                                     {{field.fieldName}}
                                                     </button>
                                                 </h2>
@@ -151,9 +155,9 @@
                             <!--Beginning Languages -->
                                     {{#isLanguage field.shortName}}
                                         <div class="card">
-                                            <div class="card-header" id="heading{{@index}}">
+                                            <div class="card-header text-center" id="heading{{@index}}">
                                                 <h2 class="mb-0">
-                                                    <button class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
+                                                    <button id="header03" class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
                                                     {{field.fieldName}}
                                                     </button>
                                                 </h2>
@@ -201,9 +205,9 @@
                             <!--Beginning courses -->
                                     {{#isCourse field.shortName}}
                                         <div class="card">
-                                            <div class="card-header" id="heading{{@index}}">
+                                            <div class="card-header text-center" id="heading{{@index}}">
                                                 <h2 class="mb-0">
-                                                    <button class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
+                                                    <button id="header04" class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
                                                     {{field.fieldName}}
                                                     </button>
                                                 </h2>
@@ -233,9 +237,9 @@
                             <!--Beginning skills -->
                                     {{#isSkill field.shortName}}
                                         <div class="card">
-                                            <div class="card-header" id="heading{{@index}}">
+                                            <div class="card-header text-center" id="heading{{@index}}">
                                                 <h2 class="mb-0">
-                                                    <button class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
+                                                    <button id="header05" class="btn btnCtrl collapsed" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" aria-expanded="false" aria-controls="collapse{{@index}}">
                                                     {{field.fieldName}}
                                                     </button>
                                                 </h2>
@@ -280,4 +284,8 @@
 <!--boostrap js-->
     <script src="/js/jquery/jquery.js"></script>
     <script src="/js/bootstrap/bootstrap.min.js"></script>
+<!--customed js-->
+    <script src="/js/navlink.js"></script>
+    <script src="/js/cardHeaderAbout.js"></script>
+    
 </html>

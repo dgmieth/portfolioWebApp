@@ -4,88 +4,390 @@
 <!--- MARKET LIST APP -->
 <b>Home view controller.</b> <i>(screenshoot 1 from left to right)</i> app's normal appearance and <i>(screenshoot 2 from left to right)</i> app's dark mode apperance.
 
-<b>Market (Mercado) view controller.</b> <i>(screenshoot 1 from left to right)</i>: here the markets (stores) will be listed, but when there isn't any, the view controller shows a message instead. <i>(screenshoot 2 from left to right)</i>: user may add a new market(store) by clicking on the bottom right button <i>New Market (novo mercado)</i> and typing its name in the alert. <i>(screenshoot 3 from left to right)</i>: table view shows the newly added market together with any previously created one. <i>(screenshoot 4 from left to right)</i>: tapping on a cell calls the <i>didSelectRowAt</i> method. It shows an alert with three options: <i>Delete Marekt (delete mercado)</i>. <i>Edit Name (editar nome)</i> and <i>Cancel (cancelar)</i>
+<b>Market (Mercado) view controller.</b> <i>(screenshoot 1 from left to right)</i>: here the markets (stores) will be listed, 
+but when there isn't any, the view controller shows a message instead. <i>(screenshoot 2 from left to right)</i>: user may add a new market(store) 
+by clicking on the bottom right button <i>New Market (novo mercado)</i> and typing its name in the alert. <i>(screenshoot 3 from left to right)</i>: 
+table view shows the newly added market together with any previously created one. <i>(screenshoot 4 from left to right)</i>: tapping on a cell calls the 
+<i>didSelectRowAt</i> method. It shows an alert with three options: <i>Delete Marekt (deletar mercado)</i>. <i>Edit Name (editar nome)</i> and 
+<i>Cancel (cancelar)</i>
 
-<b>Section (Setor) view controller.</b> <i>(screenshoot 1 from left to right)</i>: here the sections will be listed, but when there isn't any, the view controller shows a message instead. <i>(screenshoot 2 from left to right)</i>: user may add a new section by clicking on the bottom right button <i>New Section (novo setor)</i>, typing its name in the alert and choosing which market(store) it belongs to. <i>(screenshoot 3 from left to right)</i>: table view shows the newly added market together with any previously created one. Tapping on any cell calls the <i>didSelectRowAt</i> method. It shows an alert with four options: <i>Delete Section (delete setor)</i>. <i>Edit Name (editar nome)</i>, <i>Change market (alterar mercado)</i> and <i>Cancel (cancelar)</i>. <i>(screenshoot 4 from left to right)</i>: close up of alert to change the market (store) the section is related to. 
+<b>Section (Setor) view controller.</b> <i>(screenshoot 1 from left to right)</i>: here the sections will be listed, but when there isn't any, 
+the view controller shows a message instead. <i>(screenshoot 2 from left to right)</i>: user may add a new section by clicking on the bottom right button 
+<i>New Section (novo setor)</i>, typing its name in the alert and choosing which market(store) it belongs to. <i>(screenshoot 3 from left to right)</i>: 
+table view shows the newly added section together with any previously created one. Tapping on any cell calls the <i>didSelectRowAt</i> method. 
+It shows an alert with four options: <i>Delete Section (deletar setor)</i>. <i>Edit Name (editar nome)</i>, <i>Change market (alterar mercado)</i> and 
+<i>Cancel (cancelar)</i>. <i>(screenshoot 4 from left to right)</i>: close up of alert to change the market (store) that the section is related to. 
 
-<b>General registry of Items (Cadastro Geral de Itens) view controller.</b> <i>(screenshoot 1 from left to right)</i>: itens are shown here, except if there isn't any saved yet, in which case the view controller shows a message instead. User may add items by clicking on the bottom right button <i>+</i>. <i>(screenshoot 2 from left to right)</i>: user will have to choose a market (store) and a section from the <i>pickerViews</i> respectively. The user may also add a market (store) and a section by choosing the last option among the <i>pickerView</i> options. <i>(screenshoot 3 and 4 from left to right)</i>: user will have to fill in the item's name (nome), brand -not required- (marca), choose a form of sale (Forma de Venda) from the <i>pickerView</i>, inform the price (preço). It is also possible to inform if the item needs refrigeration or not using the Item Refrigerated (item refrigerado) <i>switch</i> and to take a picture.  
+<b>General registry of Items (Cadastro Geral de Itens) view controller.</b> <i>(screenshoot 1 from left to right)</i>: itens are shown here, 
+except if there isn't any saved yet, in which case the view controller shows a message instead. User may add items by clicking on the bottom right button 
+<i>+</i>. <i>(screenshoot 2 from left to right)</i>: user will have to choose a market (store) and a section from the <i>pickerViews</i> respectively. 
+The user may also add a market (store) and a section by choosing the last option in the <i>pickerView</i> options. 
+<i>(screenshoot 3 and 4 from left to right)</i>: user will have to fill in the item's information: name (nome), brand -not required- (marca), 
+choose a form of sale (Forma de Venda) from the <i>pickerView</i>, inform the price (preço). It is also possible to inform if the item needs refrigeration or 
+not using the Item Refrigerated (item refrigerado) <i>switch</i> and to take a picture.  
 
-<b>General registry of Items (Cadastro Geral de Itens) view controller.</b> <i>(screenshoot 1 from left to right)</i>: it shows the saved items collasped by market (store). <i>(screenshoot 2 from left to right)</i>: it shows the saved items collasped by section. <i>(screenshoot 3 from left to right)</i>: it shows the saved items. <i>(screenshoot 4 from left to right)</i>: tapping on any markets(store) or sections <i>tableViewCell</i> collapses/uncollapses that market(store)/section. Tapping on any item <i>tableViewCell</i> opens up the <i>Item Information (Informações do Item) view controller</i>.
+<b>General registry of Items (Cadastro Geral de Itens) view controller.</b> <i>(screenshoot 1 from left to right)</i>: it shows the saved items collapsed 
+by market (store). <i>(screenshoot 2 from left to right)</i>: it shows the saved items collapsed by section. <i>(screenshoot 3 from left to right)</i>: 
+it shows the saved items. <i>(screenshoot 4 from left to right)</i>: tapping on any markets(store) or sections <i>tableViewCell</i> collapses/uncollapses 
+that market(store)/section. Tapping on any item <i>tableViewCell</i> opens up the <i>Item Information (Informações do Item) view controller</i>.
 
-<b>Item Information (Informações do Item) view controller.</b> <i>(screenshoot 1 from left to right)</i>: it shows the same information shown when the user was creating a new item, with two differences thoug: on top right corner, there is and <i>Edit (editar)</i> button and on the bottom left corner, a <i>Puchase History (histórico de compras)</i>. <i>(screenshoot 2 from left to right)</i>: upon clicking on the <i>Purchase History (histórico de compras)</i>, it shows the <i>Purchase History (histórico de compras) view controller</i> which shows how much and how many of that item was purchased ordered by date. If there isnt any information, the <i>tableView</i> shows an empty message instead. <i>(screenshoot 3 and 4 from left to right)</i>: the user may also edit the item information, by clicking on the <i>Edit (editar)</i> button. It is possible to change the market(store), the section, and any other information about the item. Under the <i>editing mode</i> the user may also delete the item by clicking on the <i>Delete (deletar)</i> button. 
+<b>Item Information (Informações do Item) view controller.</b> <i>(screenshoot 1 from left to right)</i>: it shows the same information shown when the user 
+creates a new item, with two differences though: on top right corner, there is an <i>Edit (editar)</i> button and on the bottom left corner, a 
+<i>Puchase History (histórico de compras)</i> button. <i>(screenshoot 2 from left to right)</i>: upon clicking on the <i>Purchase History (histórico de compras)</i>, 
+it brings the <i>Purchase History (histórico de compras) view controller</i> which shows how much and how many of that item was purchased by date. 
+If there isn't any information, the <i>tableView</i> shows an empty message instead. <i>(screenshoot 3 and 4 from left to right)</i>: the user may also edit 
+the item'` information, by clicking on the <i>Edit (editar)</i> button. It is possible to change the market(store), the section, and any other information about 
+the item. Under the <i>editing mode</i> the user may also delete the item by clicking on the <i>Delete (deletar)</i> button. 
 
-<b>General registry of Items (Cadastro Geral de Itens) view controller.</b> <i>(screenshoot 1 from left to right)</i>: clicking on the righ hand side of the item cell, triggers the <i>didSelectRowAt</i> for adding the item to the week's shopping list. It shows an alert requiring the user to type how many/how much of that item is to be bought. <i>(screenshoot 2 from left to right)</i>: items added to the week's shopping list wil have be checked on the right hand side of the item <i>tableViewCell</i>.
+<b>General registry of Items (Cadastro Geral de Itens) view controller.</b> <i>(screenshoot 1 from left to right)</i>: clicking on the right hand side of the 
+item cell triggers the <i>didSelectRowAt</i> for adding the item to the week's shopping list. It shows an alert requiring the user to type how many/how much 
+of that item is to be bought. <i>(screenshoot 2 from left to right)</i>: items added to the week's shopping list wil be checked on the right hand side 
+of the item <i>tableViewCell</i>.
 
-<b>Week's Shopping List (lista semanal de compras) view controller.</b> <i>(screenshoot 1 and 2 from left to right)</i>: lists the items collapsed by markets(stores) and then by seciont. <i>(screenshoot 3 from left to right)</i>: clicking on the item <i>tableViewCell</i> triggers the <i>didSelectRowAt</i> method that shows four options: <i>Edit Price (editar preço)</i>, <i>Edit Quantity (editar quantidade)</i>, <i>Remove Item (remover item)</i> -removes the item from this week's list only- and <i>Cancel (cancelar)</i>. <i>(screenshoot 4 from left to right)</i>: screenshot shows the <i>Edit quantity</i>. Both <i>Edit Quantity</i> and <i>Edit Price</i> on this <i>view controller</i> help to easily update the quantity of the item to be bought on this list and the price of the item in the database respectively. 
+<b>Week's Shopping List (lista semanal de compras) view controller.</b> <i>(screenshoot 1 and 2 from left to right)</i>: lists the items collapsed by 
+markets(stores) and then by sections. <i>(screenshoot 3 from left to right)</i>: clicking on the item <i>tableViewCell</i> triggers the <i>didSelectRowAt</i> 
+method that shows four options: <i>Edit Price (editar preço)</i>, <i>Edit Quantity (editar quantidade)</i>, <i>Remove Item (remover item)</i> -removes the 
+item from this week's list only- and <i>Cancel (cancelar)</i>. <i>(screenshoot 4 from left to right)</i>: screenshot shows the <i>Edit quantity</i>. Both 
+<i>Edit Quantity</i> and <i>Edit Price</i> on this <i>view controller</i> help to easily update the quantity of the item to be bought in this list and the 
+price of the item in the database respectively. 
 
-<b>Week's Shopping List (lista semanal de compras) view controller.</b> <i>(screenshoot 1 from left to right)</i>: tapping on the right hand side of the item <i>tableViewCell</i> will mark it as <i>bought (checked)</i>. The <i>didSelectRowAt</i> method responsible for this checking action also triggers the function that updates the bottom left <i>lables</i> that inform the user how many of the totalily of items he/she has already purchased and how much that totality cost. <i>(screenshoot 2 from left to right)</i>:  in order to finish the list, the user has to click on the bottom right button <i>Finish List (finalizar lista)</i>. It will show an <i>alert</i> asking if the user really watns to finish the list. If user clicks on <i>Yes (sim)</i> the list is finished. All checked items will have its <i>purchase history</i> updated, all non purchased items will be unselected for this week's shopping list only. The list with all boght items will be saved to the <i>History of Finished Shopping List (Listas finalizadas de compras) view controller</i>.
+<b>Week's Shopping List (lista semanal de compras) view controller.</b> <i>(screenshoot 1 from left to right)</i>: tapping on the right hand side of the item 
+<i>tableViewCell</i> will mark it as <i>bought (checked)</i>. The <i>didSelectRowAt</i> method responsible for this checking action also triggers the function 
+that updates the bottom left <i>lables</i> that inform the user how many of the totalily of items he/she has already purchased and how much that totality costs. 
+<i>(screenshoot 2 from left to right)</i>:  in order to finish the list, the user has to click on the bottom right button <i>Finish List (finalizar lista)</i>. 
+It will show an <i>alert</i> asking if the user really wants to finish the list. If user clicks on <i>Yes (sim)</i> the list is finished. All checked items will 
+have its <i>purchase history</i> updated, all not purchased items will only be unselected for this week's shopping list. The list with all bought items will be 
+saved to the <i>History of Finished Shopping List (Listas finalizadas de compras) view controller</i>.
 
-<b>History of Finished Shopping List (Listas finalizadas de compras) view controller.</b> <i>(screenshoot 1 from left to right)</i>: shows a message the <i>view controller</i> shows where there isn't any list saved to the database. <i>(screenshoot 2 from left to right)</i>: shows the list collapsed by <i>conclusion date (concluída em ...)</i>. <i>(screenshoot 3 from left to right)</i>: uncollapsed list showing all items that list coantained.
+<b>History of Finished Shopping List (Listas finalizadas de compras) view controller.</b> <i>(screenshoot 1 from left to right)</i>: that is a message 
+that the <i>view controller</i> shows when there isn't any lists saved to the database. <i>(screenshoot 2 from left to right)</i>: shows the list collapsed 
+by <i>conclusion date (concluída em ...)</i>. <i>(screenshoot 3 from left to right)</i>: uncollapsed list showing all items that list contained.
 
-<b>Purchase History (histórico de compras) view controller.</b> <i>(screenshoot 1 and 2 from left to right)</i>: they show an empty purchase history on the left and an item with a register of purchase on the right. This list will show a maxiomum of 20 registers per item. After that, only the 20 most recent registers will be shown. 
+<b>Purchase History (histórico de compras) view controller.</b> <i>(screenshoot 1 and 2 from left to right)</i>: they show an empty purchase history on the 
+left and an item with a purchase register on the right. This list will show a maxiomum of 20 registers per item. After that, only the 20 most recent registers 
+will be shown. 
 
-<b>Other screenshots.</b> <i>(screenshoot 1 and 2 from left to right)</i>: they show the difference between normal appearance and dark mode on the <i>General registry of Items (Cadastro Geral de Itens) view controller.</i> <i>(screenshoot 3 from left to right)</i>: close-up of the <i>Item photo (Foto item) view controller</i> available when clicking on the left hand side of the item <i>tableViewCell</i> in the <i>General registry of Items (Cadastro Geral de Itens) view controller</i> and <i>Week's Shopping List (lista semanal de compras) view controller</i>.
+<b>Other screenshots.</b> <i>(screenshoot 1 and 2 from left to right)</i>: they show the difference between normal appearance and dark mode on the 
+<i>General registry of Items (Cadastro Geral de Itens) view controller.</i> <i>(screenshoot 3 from left to right)</i>: close-up of the 
+<i>Item photo (Foto item) view controller</i> available when clicking on the left hand side of the item <i>tableViewCell</i> in the 
+<i>General registry of Items (Cadastro Geral de Itens) view controller</i> and <i>Week's Shopping List (lista semanal de compras) view controller</i>.
 
 <b>Xcode screenshot:</b> close-up of the <i>formOfSale entity</i> of the <i>coreData</i>.
 
-<b>Xcode screenshot:</b> close-up of the <i>singleItem controller class</i> of the <i>singleItem class</i> that are instantiated in the <i>Item Information (Informações do Item) view controller</i>.
+<b>Xcode screenshot:</b> close-up of the <i>singleItem controller class</i> of the <i>singleItem class</i> that is instantiated in the 
+<i>Item Information (Informações do Item) view controller</i>.
 
 <b>Xcode screenshot:</b> close-up of the app's story board.
 
 <b>Xcode screenshot:</b> close-up of the app's customed item <i>tableViewCell</i>.
 
 <p class="h5">Introduction</p>
-<p class="card-p">Once I finished my graduation, I was fired up to create a mobile app. My first motivation was purely getting the <i>know-how</i> of creating an mobile. However, at the same moment I started thinking what my app would be about, I had this idea to create my own shopping list mobile app</p>
+<p class="card-p">Once I graudated, I was fired up to create a mobile app. Initially, my motivation was purely getting the <i>know-how</i>. 
+But once I started thinking what my what it should be about, I had this idea to create my own shopping list mobile app</p>
 <p class="h5">Goals</p>
 <p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>1st</i> get some practical experience with object oriented programming;</p>
 <p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>2nd</i> get some practical experience with iOS mobile development</p>
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>3rd</i> create an app that would allow me release later versions with purchase items price and quantity statistics with the informaion contained in the database;</p>
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>4th</i> after an initial free version, release a premium version to start making some money;</p>
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>5th</i> have a picture of the item in case the user needs to buy the exact same one. Thus he/she may take a picture to have it right there on the list</p>
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>6th</i> retire my shopping list spreadshet.</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>3rd</i> create an app that would allow me to release free and premium versions later;</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>4th</i> have a picture of the item in case the user needs to buy the exact same one. 
+Thus he/she may take a picture to have it right there on the list</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>5th</i> retire my shopping list spreadshet.</p>
 <p class="h5">View controllers</p>
 <p class="h6"><u>Home view controller</u></p>
-<p class="card-p">Contains the buttons to access the other five main view controller of this mobile app. </p>
+<p class="card-p">Contains the buttons to access the other five main view controllers. </p>
 <p class="h6"><u>Market view controller</u></p>
-<p class="card-p">Allows users to register a new market, delete markets, edit a market's name. In <i>table view editing mode</i> after clicking on the <i>Edit (editar)</i> button, the user may switch the order the markets area shown. There is a function that reorders the market's locationId so that they will be ordered according to their locationId position.</p>
+<p class="card-p">It allows users to register a new market, delete a market, edit a market's name. In <i>table view editing mode</i> after clicking on the 
+<i>Edit (editar)</i> button, the user may switch the order the markets area shown. There is a function that reorders the market's locationId so that they will 
+be ordered according to their locationId position.</p>
 <p class="h6"><u>Section view controller</u></p>
-<p class="card-p">Allows users to register a new section, delete sections, edit a section's name. While <i>All (todos)</i> is marked in the <i>UICollectionView</i>, all sections will be shown alphabetically ordered. The user, however, may tap on any other <i>UICollectionViewCell</i> which are markets, then only the sections of that market will be shown ordered by each one's locationId. Only wehn seen a specific market's sections, the <i>Edit (editar)</i> button will become visible so that the user may rearrage the order of the sections of that specific market. This reorder also updates the sections locationIds so that they will always be loaded from the <i>coreData</i> according to their locationId.</p>
+<p class="card-p">It allows users to register a new section, delete a section, edit a section's name. While <i>All (todos)</i> is selected in the 
+<i>UICollectionView</i>, all sections will be shown alphabetically ordered. The user, however, may tap on any other <i>UICollectionViewCell</i> 
+which are the markets themselves, then only the sections of that market will be shown ordered by each one's locationId. 
+Only when seen a specific market's sections, the <i>Edit (editar)</i> button will become visible so that the user may rearrange the order of the sections of 
+that specific market. This reorder also updates the sections locationIds so that they will always be loaded from the <i>coreData</i> according to their 
+locationId.</p>
 <p class="h6"><u>General registry of items view controller</u></p>
-<p class="card-p">This view controller shows all items in the database under its section and market, respectively. This view controller allows adding new items, seeing and item's photo, seeing an item's information and adding an items to this week's shopping list.</P> 
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Adding a new item</i>.  The adding action calls <i>New Item (novo item) view controller</i> which allows the user to choose a market and a seciont, as well as inform the item's name, brand, form of sale, price, if it is a cold item or not and to take a picture of it. This <i>New Item view controller</i> also allows to create new markets and new sections within the markets.</p>
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Seeing an item's photo</i>.  Tapping on the left hand side of the item's <i>tableViewCell</i> calls the  <i>Item photo (Foto item) view controller</i>.</p>
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Seeing an item's info</i>.  Tapping on the middle of the item's <i>tableViewCell</i> calls the  <i>Item Information (Informações do Item) view controller</i>. In this view controller the user will see all the information of the item. He will be able to edit all its information as well as to delete the item. There is also a button that calls the <i>Purchase History (histórico de compras)</i> which shows the 20 most recent purchases of that item with the price paid and quantity bought.</p>
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Adding an item to the shooping list</i>.  Tapping on the right hand side of the item's <i>tableViewCell</i> shows an alert that requires the user to inform how many/how much of that item is to be bought. By confirming, the item will be placed on that week's shooping list and a checkmark will appear on the right hand side of the <i>tableViewCell</i> of that item.</p> 
+<p class="card-p">This view controller shows all items in the database under its respective section and market. This view controller allows adding new 
+items, seeing an item's photo and information and adding items to this week's shopping list.</P> 
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Adding a new item</i>.  The adding action calls <i>New Item (novo item) view controller</i> 
+which allows the user to choose a market and a section, as well as inform the item's name, brand, form of sale, price, if it is a cold item or not and to take 
+a picture of it. This <i>New Item view controller</i> also allows to create new markets and new sections within the markets through the <i>pickerViews</i></p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Seeing an item's photo</i>.  Tapping on the left hand side of the item's <i>tableViewCell</i> 
+calls the  <i>Item photo (Foto item) view controller</i>.</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Seeing an item's info</i>.  Tapping on the middle of the item's <i>tableViewCell</i> 
+calls the  <i>Item Information (Informações do Item) view controller</i>. In this view controller the user will see all the information of the item. 
+He/she will be able to edit all its information as well as to delete the item. There is also a button that calls the <i>Purchase History (histórico de compras)</i> 
+which shows the 20 most recent purchases of that item with its the price and quantity on each ocasion.</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Adding an item to the shooping list</i>.  Tapping on the right hand side of the item's 
+<i>tableViewCell</i> shows an alert that requires the user to inform how many/how much of that item is to be bought. By confirming, the item will be placed on 
+that week's shooping list and a checkmark will appear on the right hand side of that item's <i>tableViewCell</i>.</p> 
 <p class="h6"><u>Week's Shopping List view controller</u></p>
-<p class="card-p">This view controller shows all items added to the shopping list on the <i>General registry of items view controller</i>. This view controller also allows seeing and item's photo, editing an item's quantity to be bought or price, removing an item from this week's list and marking the item as bought. By clicking on the bottom right button <i>Finish List</i>, all marked as bought items will have today's price and quantity register to each one's purchase history and the for each marked as bought item will be created a <i>purchased item</i> which will be inserted into a <i>purchased list</i> object which will be shown in the <i>History of Finished Shopping List view controller</i>. Items that were not marked as bought on the <i>Week's Shopping List view controller</i> will just be removed from this week's shopping list.</p>
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Seeing an item's photo</i>.  Tapping on the left hand side of the item's <i>tableViewCell</i> calls the  <i>Item photo (Foto item) view controller</i>.</p>
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Editing an item's quantity to be bought or price</i>. Tapping on the middle of the item's <i>tableViewCell</i> shows an alert with some options. The first two are editing an item's price (it updates the price of the item in the database) and editing an item's quantity which will affect this week's shopping list only.</p>
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Removing an item from this week's list</i>. Tapping on the middle of the item's <i>tableViewCell</i> shows an alert with some options. The last two are removing an item from the list (it removes the item only from this week's shoping list, that is, the item is unmarked as needed to buy) and cancelling the alert. 
-<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Marking an item as bought</i>. Tapping on the right hand side of the item's <i>tableViewCell</i> marks is as an item already put in the shopping cart, that is a bought item. Bought items will show a checkmark on the right hand side of the <i>tableViewCell</i>.</p>
+<p class="card-p">This view controller shows all items added to the shopping list on the <i>General registry of items view controller</i>. 
+This view controller also allows seeing an item's photo, editing an item's quantity or price, removing an item from this week's list and checking it 
+as bought. By clicking on the bottom right button <i>Finish List</i>, all marked as bought items will have today's price and quantity register 
+to each one's purchase history and each one of these bought items will have a <i>purchased item</i> object created with its information. These objects 
+will be inserted into a <i>purchased list</i> object which will be shown in the <i>History of Finished Shopping List view controller</i>. 
+Items that were not marked as bought on the <i>Week's Shopping List view controller</i> will just be removed from this week's shopping list.</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Seeing an item's photo</i>.  Tapping on the left hand side of the item's <i>tableViewCell</i> 
+calls the <i>Item photo (Foto item) view controller</i>.</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Editing an item's quantity to be bought or price</i>. Tapping on the middle of the item's 
+<i>tableViewCell</i> shows an alert with some options. The first two are editing an item's price (it updates the price of the item in the database) and 
+editing an item's quantity to be bought which will affect this week's shopping list only.</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Removing an item from this week's list</i>. Tapping on the middle of the item's 
+<i>tableViewCell</i> shows an alert with some options. The last two are removing an item from the list (it removes the item only from this week's shoping list, 
+that is, the item is unmarked as needed to buy) and cancelling the alert. 
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>Marking an item as bought</i>. Tapping on the right hand side of the item's 
+<i>tableViewCell</i> marks it as an item already put in the shopping cart, that is a bought item. Bought items will show a checkmark on the right hand side of 
+the <i>tableViewCell</i>.</p>
 <p class="h6"><u>History of Finished Shopping List view controller</u></p>
-<p class="card-p">Every time a list is finished in the <i>Week's Shooping List view controller</i>, for each of the marked-as-bought items a <i>purchase item</i> object will be created that will contain information of that item such as: name, price, quantity, form of sale, market and section. This <i>purchased item</i> will be inserted into a <i>purchased list</i> that contains information of the market and the date the week's list was finished. The view controller will show this <i>purchased list</i>s as headers, tapping on them will uncollapse them revealing all <i>purchased item</i>s inside.</p>
+<p class="card-p">Every time a list is finished in the <i>Week's Shooping List view controller</i>, for each of the marked-as-bought items a 
+<i>purchase item</i> object will be created that will their contain information, such as: name, price, quantity, form of sale, market and section. 
+This <i>purchased item</i> will be inserted into a <i>purchased list</i> that contains information of the market and the date the week's list was finished. 
+The view controller will show this <i>purchased list</i>s as <i>tableViewCell headers</i>, tapping on them will uncollapse them revealing all 
+its <i>purchased item</i>s.</p>
 <p class="h5">Data objects</p>
-<p class="card-p">The coreData contains <i>six data objects</i>: <i>Market</i>, <i>Section</i>, <i>Item</i>, <i>Form of Sale</i>, <i>Purchased Item</i> and <i>Purchase List</i>. The relation between the first three classes is the following. Every <i>Market</i> may have many <i>Sections</i> and this may have many <i>Item</i>s. Therefor, every <i>Item</i> relates to one <i>Section</i> only and this to one <i>Market</i> only.</p>
-<p class="card-p">Every <i>Item</i> has as atributes: name, brand, is Refrigerated, photo, market and section and will have a object <i>Form of Sale</i> to deal with: how this item is sold (in singles packaged, kilos, litters, grams, kilograms), the price according to the how it is sold (i.e., if the item is sold in kilos, the price will be for 1 kilo of that item).</p>
-<p class="card-p">The remaining two classes deal with the objects that are created once a week's shopping list in finished. Every time a week's shopping list is finished, for each item on that list is created a <i>Purchased Item</i> object which will be put into a <i>Purchased List</i> object. Thus, every <i>Purchased List </i> contains an array of <i>Purchased Items</i> and every <i>Purchased Item</i> relates to one <i>Purchase List</i> only.</p> 
+<p class="card-p">The coreData contains <i>six data objects</i>: <i>Market</i>, <i>Section</i>, <i>Item</i>, <i>Form of Sale</i>, <i>Purchased Item</i> and 
+<i>Purchase List</i>. The relation between the first three classes is the following. Every <i>Market</i> may have many <i>Sections</i> and this may have many 
+<i>Item</i>s. Therefore, every <i>Item</i> relates to one <i>Section</i> only and this to one <i>Market</i> only.</p>
+<p class="card-p">Every <i>Item</i> has as atributes: name, brand, is Refrigerated, photo, market and section and will have an object <i>Form of Sale</i> 
+to deal with how this item is sold (in singles packages, kilos, litters, grams, kilograms), the price according to how it is sold (i.e., if the item is sold in 
+kilos, the price will be for 1 kilo of that item).</p>
+<p class="card-p">The remaining two classes deal with the objects that are created once a week's shopping list in finished. Every time a week's shopping list 
+is finished, for each bought item on that list is created a <i>Purchased Item</i> object which will be put into a <i>Purchased List</i> object. 
+Thus, every <i>Purchased List </i> contains an array of <i>Purchased Items</i> and every <i>Purchased Item</i> relates to one <i>Purchase List</i> only.</p> 
 
 <!-- ============================================================================================================================================= -->
 <!--  *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******  -->
 <!-- ============================================================================================================================================= -->
 <!--- DASHBOARD SUBSIDIOS -->
 
-<b>Main visulization.</b> In the first line of visualization it shows the total amount of service orders by aread (left graphic). In the middle, the total amount is divided by incoming, stock and finished. On the right hand side, the visualization shows which teams have more service orders by the size of that team's form. The second line of this visualization shows some metrics required by the client that requested this report. The last lines has one history of incoming service orders by area on the right hand side; on the left it's the history of finished service orders. 
+<b>Main visulization.</b> In the first line of visualization it shows the total amount of service orders by area (left chart). 
+In the middle, the total amount is divided by incoming, stock and finished. On the right hand side, the visualization shows which teams have more service orders 
+by the size of that team's form. The second line of this visualization shows some metrics established by my office's board of directors to measure how well the office is doing
+in accomplishing its goals. The last line has one history of incoming service orders by area on the right hand side; on the left it's the history of finished service orders. 
 
-<b>Spotfire's Data Panel.</b> It shows a <i>information link</i> to one of the tables as well as all tables used in this visualization can be seen at the dropdown list on the top right corner. 
+<b>Spotfire's Data Panel.</b> It shows an <i>information link</i> to one of the tables and all tables used in this visualization can be seen in the dropdown list on 
+the top right corner. 
 
 <b>FTP screenshot.</b> It shows all .sas documents used to generate the data and migrate it from the SAS server to the MySQL server. 
 
-<b>FTP screenshot.</b> It shows all the scripts that are run in the SAS server using the <i>crontab cli command</i>. The process to run scripts, generate date and migrate it is all automated and it runs every weekday in the early morning.  
+<b>FTP screenshot.</b> It shows all the scripts that are run in the SAS server using the <i>crontab cli command</i>. The process to run scripts, generate data and migrate 
+it is all automated and it runs every weekday in the early morning.  
 
 <b>Filtered Visualization.</b> It shows the main visulization filtered for the <i>Credit (crédito)</i> area only. 
 
-<b>Procedure MySQL.</b> This procedure is executed after the migration happens. It is responsible for updating the main data base of this report in the MySQL server. It inserts new service orders, check which ones where completed and changes the status of the ones that came in yesterday to stock or to finished, if the service order has been already finished. 
+<b>Procedure MySQL.</b> This procedure is executed after the migration happens. It is responsible for updating the main data base of this report in the MySQL server. 
+It inserts new service orders, checks which ones where completed and changes the status of the ones that came in yesterday to stock or to finished, if the service order 
+has been already finished. 
+
+
+<p class="h5">Introduction</p>
+<p class="card-p">One of the areas of the office I work in, requested the creation of a dashboard in which the whole office's staff could go to see how well the office is doing 
+in production terms.</p>
+<p class="h5">Goals</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>1st</i> easy visualization of today's incoming, outgoing and stock amounts of service orders;</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>2nd</i> track a history for incoming and finished service orders;</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>3rd</i> show the metrics used to determined how well the office is doing regarding the achievment of its goals/</p>
+<p class="h5">Visualizations</p>
+<p class="h6"><u>First line</u></p>
+<p class="card-p">From left to right: <i>the first chart</i> shows the total amount (incoming and stock) of service oders for each of my office's areas. 
+<i>The middle chart</i> shows, if no area is selected in the first chart, the whole office's service orders divided by incoming, stock, and finished service orders. 
+If an area is selected, it shows that area's total amount of service orders divided by incoming, stock, and finished. <i>The chart on the right</i> shows, if no area 
+is selected in the first chart, all of my office's teams. The size of each team's form depends on how many service orders it has. 
+If an area is selected, it shows all teams of that specific area. If on top of the area, any option of the middle chart is selected, 
+it will show only teams that fulfill those two conditions.</p>
+<p class="h6"><u>Second line</u></p>
+<p class="card-p">This area has the metrics that have been stablished by my office's Board of Directors to measure how well my office is doing in accomplishing the goals 
+    they have stablished.</p>
+<p class="h6"><u>Third line</u></p>
+<p class="card-p">This line has two visualization only. The one on the left side shows a history of how many incoming service orders there were, day by day, 
+    in the last 30 days. The one on the right has a similar function, it doesn't show the amount of incoming day by day, though, but how many were finished day by day. 
+    Each line corresponds to one of my office's areas.</p>
 <!-- ============================================================================================================================================= -->
 <!--  *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******  -->
 <!-- ============================================================================================================================================= -->
-<!--- MARKET LIST APP -->
+<!--- desafio ajuizamento 2020-->
+<b>Report's dashboard.</b> It shows information such as: when the database was update (<i>Atualização</i>) as well as the current month 
+(<i>Informações do mês</i>). In the <i>Realizado/Produtividade por equipe</i> there is information about each team's productivity. The 
+<i>Realizado/produtividade por esteira</i> shows information from each type of service. The main visualization, <i>Resumo diário</i> 
+contains information such as: how many employees each team has (gross count); how many employees each team has that are actually working 
+(net count); total amount of finished service orders by team; each team's productivity in relation to its net employees; etc. The <i>Produtividade por esteira</i> 
+shows basically the same information of <i>Realizado/produtividade por esteira</i> but showing the values for each type of service.
+
+<b>Total amount.</b> The main table, on the top of the visualization, shows the total of service orders divided into initial stock, incoming, 
+transference, cancelation, final stock by type of service by day. The pie charts show some specific information about these values.
+
+<b>Productivity.</b> The biggest table has a list of all employees and how much they produced in terms of finished service orders by day. The table on the right hand side 
+shows the this month's production average by employee. 
+
+<b>History of productivity.</b> It shows the past months production average by employee. 
+
+<b>Teams and Goals.</b> The top line shows on the left how many employees each team has by month. The right table shows how many net force employees each team has 
+(this result considers days-off, training hours, licences, vacation, etc.). The bottom line shows the production goals. The left table shows 
+how many service orders are expected to be finished by month. The right table shows how many were actually finished by month. 
+
+<b>Not attendances.</b> It shows how many hours/days an employee didn't work. This information is very importante to be able to come up with the results of net work 
+force by team. 
+
+<b>Information link.</b> It shows the information links to the tables that are the data source of this visualization. 
+
+<b>SAS.</b> It shows the SAS project responsible for creating the information shown on the visualization. 
+
+<p class="h5">Introduction</p>
+<p class="card-p">This report was required by a section of the judicial area to be able to control and, if needed, create task forces, 
+    to finish the necessary amount of service orders to fulfill this section's goals. </p>
+<p class="h5">Goals</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>1st</i> track the amount of incoming and finished service orders;</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>2dn</i> track teams' productivity;</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>3rd</i> track employees' productivity;</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>4th</i> track employees' not attendances.</p>
+<p class="h5">Visualizations</p>
+<p class="card-p">Each visualization will shows a specific information required by this section of the judicial area to track its three teams' and employees' production. 
+    The visualizations were descriibed in the captions of each picture. Please refer to those if you are interested in knowing what information is showed on each of them.</p>
+<!-- ============================================================================================================================================= -->
+<!--  *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******  -->
+<!-- ============================================================================================================================================= -->
+<!--- LIQUIDACAO XER APP -->
+<b>Tool's dashboard.</b> On this screen, the user will have a full overview of the statistics of the execution: how many internal messages were captured and how many of 
+these were validated (<i>Retono de Captura e validação</i>). It will also show how many of the validated messages were uploaded and dowloaded from SAS (<i>Retorno SAS</i>) 
+and the errors. And finally, it shows how many of them were successfully sent to have a service order opened 
+(<i>Retorno do Demandas</i>). There are two groups of buttons: the first group (<iClique no Botão Habilitado sequencialmente></i>) refers to the execution of the tool. 
+The user will click on the enabled button sequencially, that is to say, first he will click on the <i>Message capture (Capturar COE)</i> which will trigger the message 
+capturing module. Once that module is over, this first button is disabled and the second, <i>Validate fields (Validar campos)</i> is enabled. The execution sequence of 
+this tool is: first, capture messages; then, validate fields (using ReGex); the third module is a SAS query with the validated data and, finally, service orders creation. 
+The second group of button tackles more administrative problems: the first, archives those messages for which service orders were opened (<i>Arquivar COE com protocolos</i>); 
+second, answers messages which amount of the financial operation is over R$100,00 (CAD$ 25,00), saying that this is not the correct flow for that 
+(<i>Gerar COE acima de R$100.00</i>); and, third, answers messages which fields were not validated, informing the error and asking the sender to correct it 
+and send a new message (<i>Gerar COE não validados</i>). These second group of buttons will be enabled whenever there are registers that fulfill its criteria in the 
+database. 
+
+<b>Capture errors.</b> This page shows errors during capturing of messages, such as: "Access denied" that happens when another user is accessing the same message. 
+
+<b>Validation errors.</b> This page shows errors during the execution of the validation module. 
+
+<b>SAS errors.</b> This page shows errors during the execution of SAS processing.
+
+<b>Service Orders Creation errors.</b> This page shows errors during the execution of module that sends information to create service orders. 
+
+<b>Service Orders List.</b> This page shows all created service orders. 
+
+<b>ReGex Module.</b> This page shows part of the code using ReGex to validate the information in the messages.
+
+<b>MySQL Procedure.</b> This page shows the code of the procedure that brings back the service order number and ID. 
+
+<b>MySQL Event.</b> This page shows the event that runs every 6 hours and executes the procedure that brings back the service order number and ID. 
+
+<p class="h5">Introduction</p>
+<p class="card-p">There was a type of service that could be requested from external places through the internal message system. In average there were from 30 to 40 
+    messages every day to open such type of service orders. The manager requested to automate it so to free the employee that spent the whole day reading 
+    message by message, validating the information and opening service orders manually.</p>
+<p class="h5">Goals</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>1st</i> automate a specific type of service order creation;</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>2nd</i> reduce time of capturing, validating and creating service orders to less than 30 min daily;</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>3rd</i> create an administrative flow to treat the internal messages.</p>
+<p class="h5">Tool's execution</p>
+<p class="card-p">The tools execution was explained on the screenshoots' captions. Please refer to those to learn more about each part/module of this tool</p>
+<!-- ============================================================================================================================================= -->
+<!--  *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******  -->
+<!-- ============================================================================================================================================= -->
+<!--- SUMULA EM APP -->
+<b>Home form.</b> This is the tool's main form. It allows two things: <i>first</i> the user may insert a service order number in <i>Number (protocolo)</i> 
+to check all child service orders created from that. They will be listed in the subform; <i>second</i>  the user may also want to upload the spreadsheets sent through
+a <i>(parent)</i> service order, in which case, he/she will click on the button with the Excel Icon that calls the <i>Upload form</i>. 
+
+<b>Home form.</b> The subform lists all child service orders created from the parent which was inserted in the <i>Number (protocolo)</i> list box.
+
+<b>Upload form.</b> This is the form which deals with the uploading of information onto the database from the spreadsheets sent and attached to a specific type of 
+service order (<i>parent service order</i>). These spreadsheets contain one of more registers with information that need to be processed (there is a module which sends the 
+uploaded spreadsheet data to the bank's main database to get extra information regarding each specific case) have a servie service order created to be analized by 
+the operational assistants of the office. 
+
+<b>Upload form.</b> The first thing the user has to do in order to upload a spreadsheet is to inform the service order number it came attached to. He/she may fill it in the 
+<i>Number (Protocolo) text box</i>. That will trigger a function that returns that service order's id from the main database. After this, he/she may click on the button 
+<i>Upload (importart XLS)</i> to upload all spreadsheets attached to the service order. The upload happens spreadsheet by spreadsheet. Once the data is transfered to the 
+temp table in the 
+Microsoft Access, the SAS modules kicks in and brings back some extra information regarding each register. Only after the SAS module is over, the data is sent to the MySQL
+database. The uploaded spreadsheets will appear in a line in the first subform 
+<i>Informative (informativo)</i>. If the column <i>Correct (correto)</i> of any register of this form is not 100%, by selecting the line or clicking in any field of 
+that line, the second subform <i>File Errors (detalhamento de erros no arquivo)</i> will show all registers inside that spreasheet that have missing information. 
+From here all process is automated and crontrolled through procedures. There area three other buttons on this form: <i>visualize (visualizar)</i> which allows the 
+user to see all registers uploaded from a specific spreasheet; <i>Delete selected (Apagar selecionados)</i> which deletes all selected spreasheets and all its 
+registers from the temp table and from MySQL database and <i>Go back (voltar)</i> which sends the user back to the <i>Home form</i>
+
+<b>Vba screenshot.</b> It shows the home form's vba code.  
+
+<b>Procedures.</b> The user only uploads the the spreadsheets using Microsoft Access as a front end. Everything else happens in the MySQL server. 
+This screenshoot shows the procedure responsible for creating one of the two types of service order this tools generates. It will send registers to the  
+service order central system to have their respective service orders created whenever it finds new registers with the service order number columns containing <i>NULL</i> 
+values. This tool's database also have procedures for: getting back a service order's information after it is created by central system; 
+registering observations to the service order to help its analysis; creating the sencond type of service orders this tools is responsible for. 
+
+<b>Sequencial function.</b> Whenever it is necessary to put an observation to the service order, the central system has a table in which the service order number 
+is informed. This is a primary key together with the sequencial number, that is to say, how many times this service order has been inserted in this table. 
+This functions returns the max count for each service order and increments it by one, so to avoid primary key duplication. 
+
+<b>Events.</b> It was already said that apart from uploading spreadsheets, everything else in this tool is controlled through procedures. They, in turn, are controlled 
+by events. This is a screenshot of one of them which calls the procedures that look form service order information and that creates observation. It is scheduled to run every weekday 
+at 4:50 pm. 
+
+
+<p class="h5">Introduction</p>
+<p class="card-p">This tools was designed to free work force by automating the process of creating service orders from spreadsheets. These spreadsheets usually come 
+attached to a service order (<i>parent service order</i>). The information contained in them will be used to create other service orders (<i>child service order</i>). 
+The work to download, analyse and create service orders used to be done manually by an employee and it would take a whole day or even more depending on the quantity of 
+information in the spreadsheets and on the quantity of spreadsheets themselves. This tools has made this whole process to take less than an hour now.</p>
+<p class="h5">Goals</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>1st</i> upload spreadsheets, analyse the information, send it to SAS to gather more data and open the service order automatically;</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>2dn</i> free the employee that used to work on these spreasheet to anaylse the created service orders.</p>
+<p class="h5">Tool's execution</p>
+<p class="card-p">The tools execution was explained on the screenshoots' captions. Please refer to those to learn more about each part/module of this tool</p>
+
+<!-- ============================================================================================================================================= -->
+<!--  *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******  -->
+<!-- ============================================================================================================================================= -->
+<!--- PORTFOLIO APP -->
+<b>Index.js.</b> It shows some of the configurations and the routes used in this application. 
+
+<b>project.hbs.</b> The portfolio app uses hbs as its view engine. I used its built-in and my customed-made helpers to create the page dinamically. Therefore, I have only 
+one project page that have its elements created/populated according to the object that is being passed by the <i>index.js</i> 
+
+<b>Firestore screenshot.</b> It shows all my four big documents that contain all my projects. 
+
+<b>SumulaEmLote document.</b> It shows the fields that this project contains. These fields are the same for all projects. 
+
+<b>Firebase storage.</b> It shows the folders at /homePage/ directory in my storage. These directories contain all the images and icons of my application.
+
+<b>Firebase storage.</b> It shows all files inside /homePage/desktopApp/ directory.
+
+<p class="h5">Introduction</p>
+<p class="card-p">On one hand, I wanted to create a more professional way to show my projects; on the other, I wanted something extremely easy to maintain. The process of 
+    adding a new project should be as painless as possible. So, I found that, for my use, Google's Firebase Cloud Function would suffice to host it as well as its no-SQL database and storage would make do 
+    for my app's needs.</p>
+<p class="h5">Goals</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>1st</i> have a web page to show my projects;</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>2nd</i> have an easy way for adding projects and controlling if they should be published or not;</p>
+<p class="card-p" style="margin-left: 20mm;text-indent: 0;"><i>3rd</i> set up google analytics.</p>
+<p class="h5">The web app</p>
+<p class="card-p">All the code for my web app can be checked at the GitHub link that is in the Project Summary section above.</p>
+<p class="card-p">This application's <i>apple of the eye</i> is the <i>Firebase FireStore</i> and <i>Firebase Storage</i>. When I was designing how the data structure should be, I came up with a sequence 
+of fields each <i>document</i> should have that would allow me use the dynamicity of <i>hbs</i>. The projects are divided into collections which correspond to the <i>home page .card classes</i>.</p>
+<p class="h5"><u>Data strcuture of the app inside firebase firestore</u></p>
+<p class="card-p"><i>_canPublish (string)</i> the <i>project.hbs</i> checks if this field is true. If it is, it will create the page, othewise it will show a <i>div</i> saying that the page is 
+<i>under construction</i>.</p> 
+<p class="card-p" ><i>name (string)</i> used in some parts of the code</p> 
+<p class="card-p" ><i>nameFull (string)</i> used in the home page and in the project page as titles of the project</p> 
+<p class="card-p" ><i>projectInfo (Map)</i> inside it there are two arrays: <i>keys (string array)</i> that contain the titles of the <i>Project Summary</i>; and the <i>values (string array)</i> 
+that contain the values of the keys. I can use html tags in these strings because of the <i>hbs SafeString</i>. This feature was 
+necessary so that I may stylize the text however I need it without having to change the code in my project.
+<p class="card-p" ><i>projectInfoGraphicInfo (map)</i> inside it there are tow arrays: <i>photos (string array)</i> that contain the location of the images inside <i>Firebase storage</i>; and <i>captions 
+    (string array)</i> that contain the caption for each image in the photos array.</p> 
+<p class="card-p" ><i>projectDescriptions (string array)</i> it wasn't necessary that this field were a string, but I thought it would be easier for maintenance. All information here have to be inside 
+<i>p tags</i>. I created some customized classes in my <i>project.css</i> file, so that I would have some text control (such as alignment) even though I would not be dealing directly with my app's code.   
+<p class="h5">Conclusion</p>
+<p class="card-p">I have created a very easy to use web app to show my current and future projects. One of its main advantages is dynamicity that does not demand me to change the code everytime I add/remove a 
+    new project.
+<!-- ============================================================================================================================================= -->
+<!--  *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******  -->
+<!-- ============================================================================================================================================= -->
+<!--- SUMULA EM APP -->
+
+

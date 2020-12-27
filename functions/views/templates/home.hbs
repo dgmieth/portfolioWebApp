@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="/css/header&footer/header.css">
     <link rel="stylesheet" href="/css/homePage/home.css">
     <link rel="stylesheet" href="/css/header&footer/footer.css">
+    <!--google fronts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
 </head>
 <body class="parent">
 <div class="container loading-page">
@@ -52,7 +56,7 @@
                     <div class="card card-code-group-wrapper">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
-                                <button class="btn card-header-title" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button id="mobile" class="btn card-header-title" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Mobile apps
                                 </button>
                             </h5>
@@ -83,7 +87,7 @@
                     <div class="card card-code-group-wrapper">
                         <div class="card-header" id="headingTwo">
                             <h5 class="mb-0">
-                                <button class="btn card-header-title" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <button  id="web" class="btn card-header-title" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                 Web apps
                                 </button>
                             </h5>
@@ -114,7 +118,7 @@
                     <div class="card card-code-group-wrapper">
                         <div class="card-header" id="headingThree">
                             <h5 class="mb-0">
-                                <button class="btn card-header-title" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                <button  id="desktop" class="btn card-header-title" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                 Desktop apps
                                 </button>
                             </h5>
@@ -145,7 +149,7 @@
                     <div class="card card-code-group-wrapper">
                         <div class="card-header" id="headingFour">
                             <h5 class="mb-0">
-                                <button class="btn card-header-title" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                <button id="graphic" class="btn card-header-title" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                                 Graphic designs 
                                 </button>
                             </h5>
@@ -181,6 +185,10 @@
 </body>
 <!--boostrap js-->
     <script src="/js/jquery/jquery.js"></script>
+    <script src="/js/bootstrap/bootstrap.min.js"></script>
+<!--customed js-->
+    <script src="/js/navlink.js"></script>
+    <script src="/js/cardSelected.js"></script>
     <script>
         function createCookie(name, value, days) {
             if (days) {
@@ -209,7 +217,28 @@
         if (!readCookie("adSeen")) {
             var progressBar = $('.progress-bar');
             var percentVal = 0;
-            fetch('/registerLog')
+            var dataObj = {
+                ip: ''
+            }
+            fetch('https://api.ipify.org?format=json').then((resp)=>{
+                console.log(597867)
+                resp.json().then((data)=>{
+                    console.log(data.ip)
+                    dataObj.ip = data.ip
+                    fetch('/registerLog', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(dataObj)
+                    }).then((response)=>{
+                        response.json().then((data) => {
+                            console.log(data)
+                        })
+                    })
+                })
+            })
+            
             function startInterval(){
                 return window.setInterval(function(){
                     percentVal += 1;
@@ -240,5 +269,4 @@
             })
         }
     </script>
-    <script src="/js/bootstrap/bootstrap.min.js"></script>
 </html>

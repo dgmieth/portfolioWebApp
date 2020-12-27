@@ -5,18 +5,16 @@ const admin = require('firebase-admin');
 //----------------------------------------------------------------------------------
 //       checks if user is already logged in, if not register login in database
 //----------------------------------------------------------------------------------
-module.exports = async(chosenConfiguration)=>{
-    await insertVisitationLog(chosenConfiguration)
-    return null
-    
+module.exports = async(chosenConfiguration, ip, location)=>{
+    return await insertVisitationLog(chosenConfiguration, ip, location)
 }
 //----------------------------------------------------------------------------------
 //                      insert into database statement
 //----------------------------------------------------------------------------------
-async function insertVisitationLog(chosenConfiguration){
+async function insertVisitationLog(chosenConfiguration, ip, location){
     var newTime = new Date()
     if (chosenConfiguration==='production'){
-        var docTitle = 'prod_'
+        var docTitle = ''
         newTime.setHours(newTime.getHours()-3)
         docTitle = `${docTitle}${newTime.getUTCFullYear()}` 
     
@@ -44,11 +42,16 @@ async function insertVisitationLog(chosenConfiguration){
             docTitle = `${docTitle}:0${newTime.getUTCSeconds()}`
         } else {
             docTitle = `${docTitle}:${newTime.getUTCSeconds()}`
-        }    
+        } 
         const writeResult = await admin.firestore().collection('logIn_log').doc(`${docTitle}`).set({
             logged: true,
-            time: new Date()
+            time: new Date(),
+            ip: ip, 
+            location: location 
         })
-        .catch((error)=>{console.error("Error writing document: ", error)})
+        .catch((error)=>{
+            return({error: 'Location not saved'}, undefined)
+        })
+        return(undefined,{success: 'Location saved'})
     }
 }

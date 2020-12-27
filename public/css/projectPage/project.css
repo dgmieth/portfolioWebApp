@@ -14,7 +14,7 @@ MEDIA QUERY
 BODY                                           
 ============================================================================================*/
 body{
-    background-color: rgba(26, 26, 29, 1);
+    background-color: rgba(10, 54, 21, 1);
 }
 /*===========================================================================================
 .breadcrumb-wraper < BODY                                           
@@ -24,18 +24,36 @@ body{
 ============================================================================================*/
     .breadcrumb{
         background-color: transparent;
+        color:  rgba(217, 211, 62, 1) ;
+    }
+    .breadcrumb .breadcrumb-item a {
+        font-family: 'Acme', 'Times New Roman', Times, serif;
+        font-size: 1.2em;
+        color: lightgray!important;
+        text-decoration: underline!important;
+    }
+    .breadcrumb .active,  .breadcrumb-item::before{
+        font-family: 'Acme', 'Times New Roman', Times, serif;
+        font-size: 1.2em;
+        color:  rgba(217, 211, 62, 1) !important;
     }
 /*===========================================================================================
 #app-title-wrapper                                          
 ============================================================================================*/
 #app-title-wrapper{
-    background-color: rgba(78, 78, 80, 1);
+    background-color:  rgba(217, 211, 62, 1)  ;
 }
 /*===========================================================================================
     #project-name-for-card                                       
 ============================================================================================*/
     #project-name-for-card{
-        color:  rgba(0, 174, 239, 1);
+        font-family: 'Permanent Marker','Bradley Hand', cursive;font-weight:400;
+        line-height: 1.5em;
+        font-size: 2.5em;
+        color: rgba(27, 120, 35, 1);
+        font-weight: 500;
+        text-shadow:  -0.8px -0.8px 0 #000, 0.8px -0.8px 0 #000, -0.8px 0.8px 0 #000, 0.8px .8px 0 #000;
+        
     }
 /*===========================================================================================
 .app-information                                     
@@ -87,20 +105,30 @@ body{
         .card-header
 ============================================================================================*/
         .card-header{
-            background-color: rgba(78, 78, 80, 1);
+            background-color:  rgba(217, 211, 62, 1)  ;
             border: none;
         }
 /*===========================================================================================
             h1 < .card-header
 ============================================================================================*/
             .card-header  h1 {
-                color:  rgba(0, 174, 239, 1);
+                font-family: 'Permanent Marker','Bradley Hand', cursive;
+                font-size: 1.5em;
+                color: rgba(27, 120, 35, 1);
+                font-weight: 500;
+                text-shadow:  -0.8px -0.8px 0 #000, 0.8px -0.8px 0 #000, -0.8px 0.8px 0 #000, 0.8px .8px 0 #000;
+            }
+            .card-header:hover h1, .selected {
+                color: black!important;
+                font-weight: 700!important;
+                text-decoration: none!important;
+                text-shadow: none!important;
             }
 /*===========================================================================================
         .card-body
 ============================================================================================*/
         .card-body{
-            background-color: rgba(227, 221, 210, 1);
+            background-color:  rgba(217, 211, 62, 1) ;
             padding: .1rem 1.25rem;
         }
 /*===========================================================================================

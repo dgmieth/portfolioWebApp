@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="/css/header&footer/header.css">
     <link rel="stylesheet" href="/css/projectPage/project.css">
     <link rel="stylesheet" href="/css/header&footer/footer.css">
+    <!--google fronts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
 </head>
 <body class="parent">
 <!-- ============================================================================================================================== -->
@@ -47,13 +51,13 @@
                 <div class="accordion" id="projectsAccordionPhoto">
                     <div class="card" id="headingG3A">
                         <div class="card-header">
-                            <button class="btn btnCtrl w-100" type="button" data-toggle="collapse" data-target="#collapseG3A" aria-expanded="false" aria-controls="collapseG3A">
-                                    <h1 class="h4 text-center">Project Screenshots</h1>
+                            <button id="collapseG3ABtn" class="btn btnCtrl w-100" type="button" data-toggle="collapse" data-target="#collapseG3A" aria-expanded="false" aria-controls="collapseG3A">
+                                    <h1 id="collapseG3AH1" class="h4 text-center">Project Screenshots</h1>
                             </button>
                         </div>
                     {{#each projectInfoGraphicInfo.photos  as |photo|}}
                         {{#if @first}}
-                            <div id="collapseG3A" class="collapse show" aria-labelledby="headingG3A" data-parent="#projectsAccordionPhoto">
+                            <div id="collapseG3A" class="collapse" aria-labelledby="headingG3A" data-parent="#projectsAccordionPhoto">
                                 <div class="card-body">
                                     <div class="w-100" style="height: 20px; background-color:none"></div>
                                     <!--<div class="container picture-wraper">-->
@@ -109,11 +113,11 @@
             {{#each projectInfo.keys as |key|}}
                 {{#if @first}}
                     <div class="card-header">
-                        <button class="btn btnCtrl w-100" type="button" data-toggle="collapse" data-target="#collapseG2A" aria-expanded="false" aria-controls="collapseG2A">
-                            <h1 class="h4 text-center">Project Summary</h1>
+                        <button id="collapseG2ABtn" class="btn btnCtrl w-100" type="button" data-toggle="collapse" data-target="#collapseG2A" aria-expanded="false" aria-controls="collapseG2A">
+                            <h1 id="collapseG2AH1" class="h4 text-center">Project Summary</h1>
                         </button>
                     </div>
-                    <div id="collapseG2A" class="collapse show" aria-labelledby="headingG2A" data-parent="#projectsAccordion">
+                    <div id="collapseG2A" class="collapse" aria-labelledby="headingG2A" data-parent="#projectsAccordion">
                         <div class="card-body">
                             <div class="w-100" style="height: 20px; background-color:none"></div>
                 {{/if}}    
@@ -128,8 +132,8 @@
                 {{#if @first}}
                 <div class="card" id="headingG1{{@index}}">
                     <div class="card-header">
-                        <button class="btn btnCtrl w-100 collapsed" type="button" data-toggle="collapse" data-target="#collapseG1{{@index}}" aria-expanded="false" aria-controls="collapseG1{{@index}}">
-                            <h1 class="h4 text-center">Project Description</h1>
+                        <button id="collapseG1Btn" class="btn btnCtrl w-100 collapsed" type="button" data-toggle="collapse" data-target="#collapseG1{{@index}}" aria-expanded="false" aria-controls="collapseG1{{@index}}">
+                            <h1 id="collapseG1H1" class="h4 text-center">Project Description</h1>
                         </button>
                     </div>
                     <div id="collapseG1{{@index}}" class="collapse " aria-labelledby="headingG1{{@index}}" data-parent="#projectsAccordion">
@@ -163,5 +167,7 @@
     <script src="/js/jquery/jquery.js"></script>
     <script src="/js/bootstrap/bootstrap.min.js"></script>
 <!--customed js-->
+    <script src="/js/navlink.js"></script>
+    <script src="/js/cardSelectedProject.js"></script>
     
 </html>
