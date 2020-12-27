@@ -51,10 +51,14 @@ app.get('/home/project', async (req,res)=>{
 //registers log in firebase
 app.post('/registerLog', async(req, res)=>{
     var location = await ipStack(req.body.ip)
+    console.log(location)
     var results = await insertVisitationLog(chosenConfiguration, req.body.ip, location.locationString)
-    if(results.error==='undefined'){
-        res.status(500).json({error: results.error})
+    console.log(results)
+    if(results.error===undefined){
+        console.log(11)
+        res.status(200).json({error: results.error})
     }else{
+        console.log(12)
         res.status(200).json({success: results.success})
     }
 })

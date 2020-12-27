@@ -221,9 +221,7 @@
                 ip: ''
             }
             fetch('https://api.ipify.org?format=json').then((resp)=>{
-                console.log(597867)
                 resp.json().then((data)=>{
-                    console.log(data.ip)
                     dataObj.ip = data.ip
                     fetch('/registerLog', {
                         method: 'POST',
@@ -233,7 +231,7 @@
                         body: JSON.stringify(dataObj)
                     }).then((response)=>{
                         response.json().then((data) => {
-                            console.log(data)
+                            
                         })
                     })
                 })

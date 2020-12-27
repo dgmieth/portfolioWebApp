@@ -12,8 +12,10 @@ module.exports = async (ip)=>{
     await rq(options).then((success)=>{
         var data = JSON.parse(success)
         objData.locationString = `${data.city}, ${data.region_code} - ${data.country_name}`
+        return objData
     }).catch((error)=>{
         objData.locationString = 'No location found'
+        return objData
     })
     return objData
 }

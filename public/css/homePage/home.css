@@ -37,16 +37,18 @@ body{
         .loading-page .progress{
             margin: auto;
             width: 75%;
-            background-color:transparent;
-            border:black 2px solid;
+            background-color: transparent;
+            padding: 2px;
+            border:rgba(217, 211, 62, 1) 2px solid;
             height: 45%;
         }
 /*===========================================================================================
             .progress-bar loading-page                                           
 ============================================================================================*/
     .loading-page .progress-bar{
-        background-color: black;
-        border: rgba(26, 26, 29, 1) 1px solid;
+        background-color: rgba(217, 211, 62, 1) ;
+        border: transparent 1px solid;
+        
         color: rgba(26, 26, 29, 1);
         font-weight: 600;
         font-size: 1.5em;    
