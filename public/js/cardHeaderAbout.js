@@ -6,7 +6,6 @@ const header05 = document.getElementById('header05')
 
 
 header01.addEventListener('click', ()=>{
-    console.log(123)
     if(header01.classList.contains('selected')){
         header01.classList.remove('selected')
     }else{

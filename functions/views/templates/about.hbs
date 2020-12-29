@@ -216,13 +216,17 @@
                                                 <div class="card-body">                                                                              
                                                     <ul class="list-group" style="padding-left: 15px;">
                                                         {{#each field.values as |course|}}
-                                                        <li class="h4">{{course.1_courseName}} </li>
+                                                        <li class="h4" style="margin-top: 15px;margin-bottom:-15px">{{course.2_name}} </li>
                                                         <div class=".container-fluid">
                                                             <div class="row" style="margin-left: 20px; margin-top: 20px;">
-                                                                <div class="col-xl-3 col-lg-6 col-12">
-                                                                    <p><strong>Platform:</strong> {{course.2_coursePlatform}}</p>
-                                                                    <p><strong>Course duration:</strong> {{course.3_courseHours}}</p>
-                                                                    <p><strong>Completion date:</strong> {{course.4_courseCompletionDate}}</p>
+                                                                <div class="col-12">
+                                                                    <p style="margin-bottom: -3px;"><strong>Type:</strong> {{course.1_type}} </p>
+                                                                    <p style="margin-bottom: -3px;"><strong>Platform:</strong> {{course.3_platform}}</p>
+                                                                    <p style="margin-bottom: -3px;"><strong>Course duration:</strong> {{course.4_duration}}</p>
+                                                                    <p style="margin-bottom: -3px;"><strong>Completion date:</strong> {{course.5_completion}}</p>
+                                                                    <a href="{{course.7_diploma}}" target="_blank">
+                                                                        <img src="{{course.6_icon}}" alt="course Icon" class="course-icon">
+                                                                    </a>
                                                                 </div>
                                                             </div>
                                                         </div>
