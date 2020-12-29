@@ -73,6 +73,12 @@ hbs.handlebars.registerHelper('isSkill', (value, options)=>{
     } 
     return options.inverse(this)
 })
+hbs.handlebars.registerHelper('isCompany', (value, options)=>{
+    if(value === 'companies'){
+        return options.fn(this)
+    } 
+    return options.inverse(this)
+})
 hbs.handlebars.registerHelper('p_description', (value)=>{
     return new hbs.handlebars.SafeString(`${value}`)
 })
