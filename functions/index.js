@@ -6,7 +6,7 @@ const hbs = require('./_functions/hbsConfiguration')
 //database firestore configuration
 var firestoreConfiguration = require('./firestore/keyAndConfiguration/firestoreConfiguration')
 var configurationType = require('./firestore/keyAndConfiguration/configurationType')
-var chosenConfiguration = configurationType.prod
+var chosenConfiguration = configurationType.dev
 //database statements
 var getAboutMeInformation = require('./firestore/CRUD/getAboutMeInformation')
 var getSpecificProject = require('./firestore/CRUD/getSpecificProject')
