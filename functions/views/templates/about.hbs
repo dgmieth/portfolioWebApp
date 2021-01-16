@@ -131,8 +131,8 @@
                                                     {{#each field.values as |degree|}}
                                                         <li class="h4"><Strong>{{degree.1_degreeType}}</Strong><i></i></li>
                                                         <p><strong>{{degree.2_degreeFullName}}</strong></p>
-                                                        <div class="container" >
-                                                            <div class="row" style="margin-bottom: 25px;">
+                                                        <div class="container" style="margin-bottom: 25px;">
+                                                            <div class="row">
                                                                 <div class="col-lg-4 col-12">
                                                                     {{degree.3_degreeYears}}
                                                                 </div>
@@ -142,6 +142,16 @@
                                                                 <div class="col-12">
                                                                     {{degree.5_degreeLocality}}
                                                                 </div>
+                                                            </div>
+                                                            <div class="container">
+                                                            {{#if degree.6_degreeHasEquivalence}}
+                                                                <p class="" style="margin:0;margin-top:3px"><strong>Canadian Equivalence: </strong>{{degree.7_degreeEquivalence}}</p>
+                                                                <p style="margin:0"><strong>Equivalence issuing date: </strong>{{degree.12_degreeEquivalenceDay}}</p>
+                                                                <p style="margin:0;"><strong>Assessment done by: </strong> <a href="{{degree.11_equivalenceInstitutionURL}}" target="_blank">{{degree.8_degreeEquilenceBy}}</a></p>
+                                                            {{/if}}
+                                                            {{#if degree.9_hasBadge}}
+                                                                <p style="margin: 0;"><strong>Badge link: </strong><a href="{{degree.10_badge}}" target="_blank">click here.</a></p>
+                                                            {{/if}}
                                                             </div>
                                                         </div>
                                                     {{/each}}
@@ -192,6 +202,31 @@
                                                                         <p><strong>Writing: </strong> {{lang.3_languageAbilities.Writing}}</p>
                                                                     </div>
                                                                 </div>
+                                                                {{#if lang.4_hasLanguageTest}}
+                                                                        <div class="row" style="margin: 0; margin-bottom:25px">
+                                                                            <div class="col-12">
+                                                                                <p class="h6" style="margin:0"><strong>Language test: </strong> {{lang.5_languageTest}}</p>
+                                                                                <p style="margin:0"><strong>Test date: </strong>{{lang.6_languageTestDate}}</p>
+                                                                                <p style="margin-top: -3px;margin-bottom:5px"><strong>Overall: </strong>{{lang.7_languageTestRestults.Overall}}</p>
+                                                                            </div>
+                                                                            <div class="col-12">
+                                                                                <div class="row" style="margin-left: 0; margin-top: 0; margin-bottom:0px">
+                                                                                    <div class="col-xl-3 col-lg-6 col-12">
+                                                                                        <p><strong>Listening: </strong> {{lang.7_languageTestRestults.Listening}}</p>
+                                                                                    </div>
+                                                                                    <div class="col-xl-3 col-lg-6 col-12">
+                                                                                        <p><strong>Reading: </strong> {{lang.7_languageTestRestults.Reading}}</p>
+                                                                                    </div>
+                                                                                    <div class="col-xl-3 col-lg-6 col-12">
+                                                                                        <p><strong>Speaking: </strong> {{lang.7_languageTestRestults.Speaking}}</p>
+                                                                                    </div>
+                                                                                    <div class="col-xl-3 col-lg-6 col-12">
+                                                                                        <p><strong>Writing: </strong> {{lang.7_languageTestRestults.Writing}}</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    {{/if}}
                                                             </div>
                                                         {{/if}}
                                                     {{/each}}
@@ -224,6 +259,9 @@
                                                                     <p style="margin-bottom: -3px;"><strong>Platform:</strong> {{course.3_platform}}</p>
                                                                     <p style="margin-bottom: -3px;"><strong>Course duration:</strong> {{course.4_duration}}</p>
                                                                     <p style="margin-bottom: -3px;"><strong>Completion date:</strong> {{course.5_completion}}</p>
+                                                                    {{#if course.8_hasBadge}}
+                                                                    <p style="margin-bottom: -3px;"><strong>Badge: </strong><a href="{{course.9_badge}}" target="_blank">Click here.</a></p>
+                                                                    {{/if}}
                                                                     <a href="{{course.7_diploma}}" target="_blank">
                                                                         <img src="{{course.6_icon}}" alt="course Icon" class="course-icon">
                                                                     </a>

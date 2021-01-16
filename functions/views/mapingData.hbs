@@ -388,6 +388,64 @@ necessary so that I may stylize the text however I need it without having to cha
 <!-- ============================================================================================================================================= -->
 <!--  *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******  -->
 <!-- ============================================================================================================================================= -->
+<!--- CREDITO POS COP -->
+Credito pos cop
+<b>Main page:</b> this is the lading page of the application. There is a pop-up that will show either one of two options: <i>there isn’t any configuration saved</i> or <i>there is already a configuration saved</i> 
+
+<b>Main page:</b> upon pop-up dismissal, if there is a configuration saved, it will be loaded and the checkboxes and input fields will be disabled. If the user wants to create a new configuration, he/she will click on the blue button <i>Create new</i>, checkboxes will be cleared and input fields will be set to <i>null</i> and will be enabled again. Every time the user chooses a filter, the eventListener fetches how many registers return from the database by applying all chosen checkboxes upon it. The user will inform how many service orders he/she wants to be opened every day.
+
+<b>Report page:</b> this page contains all service orders opened by this IT solution. It contains some information about every service order, such as number, creation date, status. Since this tool allows to recreate a service order if needed, when this happens, it will also show the parent service order.
+
+<b>Service order recreation page:</b> one of the requirements of this tool was that it would allow to recreate a finished service order if needed. Once the order service is concluded, it will be shown on this page. The user will then be able to select one or more to recreate them. They will be recreated, receive a new  number and be shown on the <b>Report page</b>. The relation between the parent and the child service order will be shown on the <b>Report page</b> under the column <i>Descendant from</i> which will show the parent service order. 
+
+<b>Configuration log:</b> shows the configuration history. It contains information like creation and exclusion user and date as well as which options where chosen in that configuration. It loads data ordered by decreasing creation date. The first line will always contain the active configuration.
+
+<b>Procedure screenshot:</b> it shows the procedure that reads the data imported from SAS and inserts all registers that are new into the quarantine base.
+
+<b>Function screenshot</b> this function counts how many times this service order appears in the system observations table that allows for inserting/deleting observations into/from the service order.  This count will be used, together with the service order number, as primary key in this system observation table. 
+
+<b>Procedure screenshot:</b> this procedure reads the tables containing the configuration saved by the user on the web interface and creates service orders accordingly. 
+
+<b>Event screenshot:</b> this event is triggered every weekday at 10:40 am and calls the procedure that creates and the one that recreates service orders. 
+
+<b>FTP screenshot:</b> this image shows scripts used to run the .sas using crontab in the linux server which hosts the SAS server.
+
+<b>FTP screenshot:</b> this image shows the directory that contains the .sas responsible for retrieving the table that will be migrated to the MySQL.
+
+<b>Visual Code screenshot</b>: it shows a snapshot of the main application file: <u>app.js</u>.
+
+<b>Visual Code screenshot</b>: it shows a snapshot of the main application file: <u>mainPage.hbs</u>.
+
+<b>Visual Code screenshot</b>: it shows a snapshot of the main application file: <u>/relProAbertos/variablesAndFunctions.js</u>.
+
+<p class=“h5”><b>Introduction</b></p>
+<p class=“card-p”>This project was developed to start handling some services that were not included in the main flow of service order creation. </p>
+<p class=“h5”><b>Migration</b></p>
+<p class=“card-p”>Firstly, our main office creates a table that contains all of these not-included services and make this table available in a directory in the SAS server.</p>
+<p class=“card-p”>After that, we access this information and migrate it to our office’s MySQL server. The migration is done using a .sas document and a mysql connector. This code’s execution is done using bash commands and scripts in the SAS server. </p>
+<p class=“card-p”>Once this table’s information is available in our MySQL server, there is a procedure that reads all new data and inserts it into a table named quarantine table. Registers will not be available for opening services for 2 whole days. </p>
+<p class=“h5”><b>Web app</b></p>
+<p class=“h6”><u>Main Page</u></p>
+<p class=“card-p”>The web application consists mainly of two parts: the configuration and the reports and logs.</p>
+<p class=“card-p”>The configuration part, which can be seen on the <i>main page</i>, will read the database tables that contain the configuration to check if there is any saved. If there is, the configuration will be loaded and user enabled elements will be disabled. There will be a pop-up saying that here is a configuration saved already and if the user wants to create a new one, he/she will have to click on the blue button (<i>Create new</i>). Upon finishing to configure, to save it, the user will have to click on the green button <i>Save</i> . If there isn’t any configuration saved on the database, the pop-up will say that there isn’t any configuration and the user will need to configure and then click on the green button (<i>Save</i>) will save it to the database.</p>
+<p class=“card-p”>Every time the user clicks on a checkbox, there is an eventListener that triggers a MySQL function that counts how many registers the database contains after applying all checked options .</p>
+<p class=“card-p”>The table the <i>main page</i> uses is the quarantine table, but the configuration will be applied only on those  registers that completed the quarantine period. </p>
+<p class=“h6”><u>Report Page</u></p>
+<p class=“card-p”>It shows all service orders opened by this it tool. It also shows which service order (child) is a descendant from another service order (parent). That was one of the requirements of this tool: to be able to reopen a service order if needed. The child service order will always shows its parent under the column <i>Descendant from</i>. </p>
+<p class=“h6”><u>Service order Recreation Page</u></p>
+<p class=“card-p”>Once the service orders are concluded, they will also be shown on this page. The datable on this page allows users to choose one or more service orders to be recreated, if needed. The new service order will receive a new number, but will have this selected service order as its parent service order. </p>
+<p class=“h6”><u>Configuration Log</u></p>
+<p class=“card-p”>It shows which user created a configuration and on which date he/she did it. It also shows what the configuration was and when and which user excluded that by creating a new one. Configurations will be shown in a decreasing order of creation date. The first line will always contain the active configuration.</p>
+<p class=“h5”><b>MySQL</b></p>
+<p class=“card-p”>It contains all tables, procedures and events.</p>
+<p class=“card-p”>If the procedures finds a configuration saved on the configuration tables, it will grab the registers from the quarantine table according to the configuration and send these register to be opened in the central system every weekday at 10:40 am.  There is procedure that fetches the service order information in the central system for created and recreated service orders. The service orders will be saved to the main service order table of this tool and its parent register in the quarantine table will have its column <i>serviceOrderOpen</i> set to 1. This way this register will not be visible to the <i>main page</i> of the web application and, therefore, it will be impossible to open another service order for this very same register.</p>
+<p class=“card-p”>Another procedure reads which concluded registers were marked to be recreated. This procedure is executed at 10:40 am too and recreates every register of the main service order table of this tool that has its column <i>recreate</i> marked to 1. After sending these registers to the central system, it marks the <i>recreate</i> column to 0 and increases the value of the <i>recreationCounter</i> column by 1. </p>
+
+
+
+<!-- ============================================================================================================================================= -->
+<!--  *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******     *******  -->
+<!-- ============================================================================================================================================= -->
 <!--- SUMULA EM APP -->
 
 
