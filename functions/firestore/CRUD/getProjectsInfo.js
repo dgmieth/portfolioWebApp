@@ -29,7 +29,7 @@ module.exports = async () => {
         })
         return null
     })
-    await getProjectsInfo('graphicDesign').then(docs => {
+    await getProjectsInfo('graphicDesign','graphicJobs').then(docs => {
         docs.forEach(doc => {
             graphicDesign.push(doc.data())
         })
@@ -47,9 +47,12 @@ module.exports = async () => {
 //----------------------------------------------------------------------------------
 //                                 accessing database
 //----------------------------------------------------------------------------------
-async function getProjectsInfo(docName){
+async function getProjectsInfo(docName, collectionName){
+    if(!collectionName){
+        collectionName = `apps`
+    }
     const db  = await admin.firestore();
-    let returnData = db.collection('projects').doc(docName).collection('apps').get()
+    let returnData = db.collection('projects').doc(docName).collection(collectionName).get()
     
     return returnData
 }
