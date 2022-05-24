@@ -6,7 +6,7 @@ const hbs = require('./_functions/hbsConfiguration')
 //database firestore configuration
 var firestoreConfiguration = require('./firestore/keyAndConfiguration/firestoreConfiguration')
 var configurationType = require('./firestore/keyAndConfiguration/configurationType')
-var chosenConfiguration = configurationType.dev
+var chosenConfiguration = configurationType.prod
 //database statements
 var getAboutMeInformation = require('./firestore/CRUD/getAboutMeInformation')
 var getSpecificProject = require('./firestore/CRUD/getSpecificProject')
@@ -40,6 +40,10 @@ app.get('', async (req,res)=>{
 //aboutPage
 app.get('/about', async (req,res)=>{
     res.render('about', {pageTitle: 'About', fields: await getAboutMeInformation()})
+})
+//aboutPage
+app.get('/teste2419368', async (req,res)=>{
+    res.render('teste', {pageTitle: 'About', fields: await getAboutMeInformation()})
 })
 //projectPages
 app.get('/home/project', async (req,res)=>{

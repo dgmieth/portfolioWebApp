@@ -1,6 +1,32 @@
 <html>
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0&appId=922866951838420&autoLogAppEvents=1" nonce="3KHAHnaP"></script>
+
+<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
     <body>
-      <h1>{{db_result.Heading}}</h1>
-      <h1>{{db_result.Tema}}</h1>
+      <h1>Teste</h1>
+      <h1>Teste2</h1>
     </body>
-</html>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '922866951838420',
+          cookie     : true,
+          xfbml      : true,
+          version    : '10.0'
+        });
+          
+        FB.AppEvents.logPageView();   
+          FB.getLoginStatus(function(response) {
+          console.log(response);
+      });
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+   </script>
